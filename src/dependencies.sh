@@ -5,6 +5,7 @@
 #if ! [ -x "$(command -v gcloud)" ]; then
 #  tar -xvzf src/lib/google-cloud-sdk.tar.gz
 #  google-cloud-sdk/install.sh
+#  rm -r google-cloud-sdk
 #fi
 
 # install google-cloud-speech python library
@@ -24,6 +25,6 @@
 
 #tar -xvzf src/lib/PyAudio-0.2.11.tar.gz
 #cd PyAudio-0.2.11
-#python3 setup.py install
+#python setup.py install
 #cd ../
 #rm -r PyAudio-0.2.11
