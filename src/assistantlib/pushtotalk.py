@@ -1,4 +1,3 @@
-
 import concurrent.futures
 import json
 import logging
@@ -40,6 +39,7 @@ DEFAULT_GRPC_DEADLINE = 60 * 3 + 5
 
 class SampleAssistant(object):
     """Sample Assistant that supports conversations and device actions.
+
     Args:
       device_model_id: identifier of the device model.
       device_id: identifier of the registered device instance.
@@ -94,6 +94,7 @@ class SampleAssistant(object):
            retry=retry_if_exception(is_grpc_error_unavailable))
     def assist(self):
         """Send a voice request to the Assistant and playback the response.
+
         Returns: True if conversation should continue.
         """
         continue_conversation = False
@@ -263,12 +264,18 @@ def main(api_endpoint, credentials, project_id,
          audio_iter_size, audio_block_size, audio_flush_size,
          grpc_deadline, once, *args, **kwargs):
     """Samples for the Google Assistant API.
+
     Examples:
       Run the sample with microphone input and speaker output:
+
         $ python -m googlesamples.assistant
+
       Run the sample with file input and speaker output:
+
         $ python -m googlesamples.assistant -i <input file>
+
       Run the sample with file input and output:
+
         $ python -m googlesamples.assistant -i <input file> -o <output file>
     """
     # Setup logging.

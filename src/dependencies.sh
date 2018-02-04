@@ -17,17 +17,6 @@ python -m pip install --upgrade google-assistant-sdk[samples]
 # Install or update the authorization tool
 python -m pip install --upgrade google-auth-oauthlib[tool]
 
-# Get Device Type
-echo
-read -p "Enter Your Device Type (Desktop or Other): " DEVICE_TYPE
-echo
-
-# Generate Random Model
-MODEL="$(openssl rand -base64 16)"
-
-# Register Device Modal
-googlesamples-assistant-devicetool register-model --manufacturer prateek --product-name linuxAI [--description A-Artificial-Intelligence-For-Linux] --type ${DEVICE_TYPE} --model ${MODEL}
-
 # install google-cloud-sdk
 if ! [ -x "$(command -v gcloud)" ]; then
   tar -xvzf src/lib/google-cloud-sdk.tar.gz -C /opt/linuxAI
