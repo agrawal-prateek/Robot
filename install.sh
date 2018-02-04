@@ -11,6 +11,9 @@ if [[ $EUID > 0 ]]; then # we can compare directly with this syntax.
 fi
 exiting_code_message="some message"
 
+chmod +x src/uninstall.sh
+src/uninstall.sh
+chmod +x src/dependencies.sh
 src/dependencies.sh
 
 exitcode=$?;
