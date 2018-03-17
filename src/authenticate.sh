@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /opt/linuxAI/env/bin/activate
+source /home/prateek/.linuxAI/env/bin/activate
 
 # Constants
 CLIENT_SECRETS=src/.config/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json
