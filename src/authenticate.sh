@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
-source /home/prateek/.linuxAI/env/bin/activate
+HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
+source /home/prateek/$HOME/env/bin/activate
 
 # Constants
 CLIENT_SECRETS=src/.config/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json
@@ -25,7 +25,7 @@ cp ${CLIENT_SECRETS} .
 googlesamples-assistant-devicetool register-model --manufacturer ${MANUFACTURER} --product-name ${PRODUCT_NAME} --description ${DESCRIPTION} --type ${DEVICE_TYPE} --model ${MODEL}
 
 # Save Data
-HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
+
 mkdir -p $HOME/.linuxAI
 rm -f $HOME/.linuxAI/details.json
 touch $HOME/.linuxAI/details.json

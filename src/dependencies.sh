@@ -43,3 +43,9 @@ cd /tmp/PyAudio-0.2.11
 sudo python3 setup.py install
 cd -
 sudo rm -rf /tmp/PyAudio-0.2.11
+
+pip install pyaudio
+
+if ! [ -x "$(command -v jq)" ]; then
+  sudo apt-get install jq
+fi
