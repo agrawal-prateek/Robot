@@ -22,9 +22,9 @@ Currently Ubuntu and Debian based operating systems are supported with this soft
 
 **Note: Installation procedure may 15 to 20 minutes. Make sure that you have stable internet connection.**
 
-## Launch the software from Start Menu
+## Launch the software
 
- You can launch the software from command line by typing the following command
+ You can launch the software either from Start Menu or from command line by typing the following command
 
 	linuxai
 
