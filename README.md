@@ -7,20 +7,24 @@ Currently Ubuntu and Debian based operating systems are supported with this soft
 
 ## Installation Procedure
 
-- First open terminal in the project directory.
+ First open terminal in the project directory.
 
-- To give the permission to files to be executed, run the following commands
+ To give the permission to files to be executed, run the following commands
 
 	chmod +x *
+
 	chmod +x src/*
 
-- Next install the software by typing the following command
+ Next install the software by typing the following command
 
 	./install.sh
+
 
 **Note: Installation procedure may 15 to 20 minutes. Make sure that you have stable internet connection.**
 
 ### Launch the software from Start Menu.
+
+-
 
  You can launch the software from command line by typing the following command
 
