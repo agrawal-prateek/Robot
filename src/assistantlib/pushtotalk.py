@@ -11,6 +11,8 @@ import grpc
 import google.auth.transport.grpc
 import google.auth.transport.requests
 import google.oauth2.credentials
+import re
+import sys
 
 from google.assistant.embedded.v1alpha2 import (
     embedded_assistant_pb2,
@@ -28,7 +30,6 @@ except (SystemError, ImportError):
     import assistant_helpers
     import audio_helpers
     import device_helpers
-
 
 ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
 END_OF_UTTERANCE = embedded_assistant_pb2.AssistResponse.END_OF_UTTERANCE
@@ -157,9 +158,9 @@ class SampleAssistant(object):
         """Yields: AssistRequest messages to send to the API."""
 
         dialog_state_in = embedded_assistant_pb2.DialogStateIn(
-                language_code=self.language_code,
-                conversation_state=b''
-            )
+            language_code=self.language_code,
+            conversation_state=b''
+        )
         if self.conversation_state:
             logging.debug('Sending conversation state.')
             dialog_state_in.conversation_state = self.conversation_state
@@ -225,11 +226,11 @@ class SampleAssistant(object):
 @click.option('--input-audio-file', '-i',
               metavar='<input file>',
               help='Path to input audio file. '
-              'If missing, uses audio capture')
+                   'If missing, uses audio capture')
 @click.option('--output-audio-file', '-o',
               metavar='<output file>',
               help='Path to output audio file. '
-              'If missing, uses audio playback')
+                   'If missing, uses audio playback')
 @click.option('--audio-sample-rate',
               default=audio_helpers.DEFAULT_AUDIO_SAMPLE_RATE,
               metavar='<audio sample rate>', show_default=True,
@@ -309,12 +310,12 @@ def main(api_endpoint, credentials, project_id,
         )
     else:
         audio_source = audio_device = (
-            audio_device or audio_helpers.SoundDeviceStream(
-                sample_rate=audio_sample_rate,
-                sample_width=audio_sample_width,
-                block_size=audio_block_size,
-                flush_size=audio_flush_size
-            )
+                audio_device or audio_helpers.SoundDeviceStream(
+            sample_rate=audio_sample_rate,
+            sample_width=audio_sample_width,
+            block_size=audio_block_size,
+            flush_size=audio_flush_size
+        )
         )
     if output_audio_file:
         audio_sink = audio_helpers.WaveSink(
@@ -324,12 +325,12 @@ def main(api_endpoint, credentials, project_id,
         )
     else:
         audio_sink = audio_device = (
-            audio_device or audio_helpers.SoundDeviceStream(
-                sample_rate=audio_sample_rate,
-                sample_width=audio_sample_width,
-                block_size=audio_block_size,
-                flush_size=audio_flush_size
-            )
+                audio_device or audio_helpers.SoundDeviceStream(
+            sample_rate=audio_sample_rate,
+            sample_width=audio_sample_width,
+            block_size=audio_block_size,
+            flush_size=audio_flush_size
+        )
         )
     # Create conversation stream with the given audio source and sink.
     conversation_stream = audio_helpers.ConversationStream(
@@ -366,8 +367,8 @@ def main(api_endpoint, credentials, project_id,
                               'when registering a device instance.')
                 sys.exit(-1)
             device_base_url = (
-                'https://%s/v1alpha2/projects/%s/devices' % (api_endpoint,
-                                                             project_id)
+                    'https://%s/v1alpha2/projects/%s/devices' % (api_endpoint,
+                                                                 project_id)
             )
             device_id = str(uuid.uuid1())
             payload = {
@@ -416,4 +417,6 @@ def main(api_endpoint, credentials, project_id,
 
 
 if __name__ == '__main__':
+    # sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    # sys.exit(main())
     main()

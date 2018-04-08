@@ -46,12 +46,12 @@ sudo rm -rf /tmp/PyAudio-0.2.11
 
 pip install pyaudio
 
-if ! [ -x "$(command -v jq)" ]; then
-  sudo apt-get install jq
-fi
-if ! [ -x "$(command -v curl)" ]; then
-  sudo apt install curl
-fi
-if ! [ -x "$(command -v mpg123)" ]; then
-  sudo apt install mpg321
-fi
+#if ! [ -x "$(command -v jq)" ]; then
+#  sudo apt-get install jq
+#fi
+#if ! [ -x "$(command -v curl)" ]; then
+#  sudo apt install curl
+#fi
+#if ! [ -x "$(command -v mpg123)" ]; then
+#  sudo apt install mpg321
+#fi

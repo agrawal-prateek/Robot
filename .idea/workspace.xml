@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a912a7de-ccbd-46b9-9b33-b444f3a112d5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/commands" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/actions/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/actions/openapplication.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/texttospeech/linuxAI-49241010769b.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/speaktext.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/registerdevice/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/registerdevice/credentials.json" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/.config/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/.config/linuxAI-6616e71f1f08.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/actions/openapplication.py" afterPath="$PROJECT_DIR$/src/actions/openapplication.py" />
+      <change beforePath="$PROJECT_DIR$/src/assistantlib/pushtotalk.py" afterPath="$PROJECT_DIR$/src/assistantlib/pushtotalk.py" />
       <change beforePath="$PROJECT_DIR$/src/authenticate.sh" afterPath="$PROJECT_DIR$/src/authenticate.sh" />
       <change beforePath="$PROJECT_DIR$/src/dependencies.sh" afterPath="$PROJECT_DIR$/src/dependencies.sh" />
       <change beforePath="$PROJECT_DIR$/src/record.py" afterPath="$PROJECT_DIR$/src/record.py" />
@@ -20,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/linuxAI$textinput.coverage" NAME="textinput Coverage Results" MODIFIED="1517763409320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
+    <SUITE FILE_PATH="coverage/linuxAI$textinput.coverage" NAME="textinput Coverage Results" MODIFIED="1523177640976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
     <SUITE FILE_PATH="coverage/linuxAI$linuxAI.coverage" NAME="linuxAI Coverage Results" MODIFIED="1520933330962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/linuxAI$record.coverage" NAME="record Coverage Results" MODIFIED="1523127831830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/linuxAI$audio_helpers.coverage" NAME="audio_helpers Coverage Results" MODIFIED="1517834773443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
@@ -40,7 +42,28 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="install.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dependencies.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,6 +78,8 @@
       <find>model</find>
       <find>pya</find>
       <find>&quot;</find>
+      <find>main</find>
+      <find>config</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,20 +101,23 @@
         <option value="$PROJECT_DIR$/src/assistantlib/audio_helpers.py" />
         <option value="$PROJECT_DIR$/src/assistantlib/device_helpers.py" />
         <option value="$PROJECT_DIR$/src/assistantlib/devicetool.py" />
-        <option value="$PROJECT_DIR$/src/assistantlib/pushtotalk.py" />
         <option value="$PROJECT_DIR$/src/assistantlib/textinput.py" />
         <option value="$PROJECT_DIR$/details.json" />
         <option value="$PROJECT_DIR$/src/uninstall.sh" />
         <option value="$PROJECT_DIR$/install.sh" />
         <option value="$PROJECT_DIR$/src/linuxAI.py" />
         <option value="$PROJECT_DIR$/src/runsample.sh" />
-        <option value="$PROJECT_DIR$/src/record.py" />
-        <option value="$PROJECT_DIR$/src/authenticate.sh" />
         <option value="$PROJECT_DIR$/commands" />
         <option value="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" />
-        <option value="$PROJECT_DIR$/src/dependencies.sh" />
         <option value="$PROJECT_DIR$/src/speaktext.sh" />
         <option value="$PROJECT_DIR$/src/actions/openapplication.py" />
+        <option value="$PROJECT_DIR$/src/record.py" />
+        <option value="$PROJECT_DIR$/src/assistantlib/pushtotalk.py" />
+        <option value="$PROJECT_DIR$/credentials.json" />
+        <option value="$PROJECT_DIR$/src/credentials/registerdevice/credentials.json" />
+        <option value="$PROJECT_DIR$/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" />
+        <option value="$PROJECT_DIR$/src/authenticate.sh" />
+        <option value="$PROJECT_DIR$/src/dependencies.sh" />
       </list>
     </option>
   </component>
@@ -104,6 +132,40 @@
     <option name="y" value="45" />
     <option name="width" value="1215" />
     <option name="height" value="683" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -121,6 +183,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,22 +201,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/credentials/registerdevice" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/credentials/texttospeech" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/.config/google-oauthlib-tool" />
-      <recent name="$PROJECT_DIR$/src/.config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -170,17 +232,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.record">
-    <configuration name="authenticate.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="bash" />
-      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/authenticate.sh" />
-      <option name="PARAMETERS" value="" />
-      <module name="linuxAI" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="Python.textinput">
     <configuration name="install.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="bash" />
       <option name="INTERPRETER_PATH" value="/usr/bin/env" />
@@ -248,20 +300,39 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="textinput" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/assistantlib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="linuxAI" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/assistantlib/textinput.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.linuxAI" />
-      <item index="1" class="java.lang.String" itemvalue="Bash.authenticate.sh" />
-      <item index="2" class="java.lang.String" itemvalue="Bash.install.sh" />
-      <item index="3" class="java.lang.String" itemvalue="Python.audio_helpers" />
-      <item index="4" class="java.lang.String" itemvalue="Python.record" />
+      <item index="1" class="java.lang.String" itemvalue="Bash.install.sh" />
+      <item index="2" class="java.lang.String" itemvalue="Python.audio_helpers" />
+      <item index="3" class="java.lang.String" itemvalue="Python.record" />
+      <item index="4" class="java.lang.String" itemvalue="Python.textinput" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.record" />
-        <item index="1" class="java.lang.String" itemvalue="Python.linuxAI" />
-        <item index="2" class="java.lang.String" itemvalue="Python.audio_helpers" />
-        <item index="3" class="java.lang.String" itemvalue="Bash.install.sh" />
-        <item index="4" class="java.lang.String" itemvalue="Bash.authenticate.sh" />
+        <item index="0" class="java.lang.String" itemvalue="Python.textinput" />
+        <item index="1" class="java.lang.String" itemvalue="Python.record" />
+        <item index="2" class="java.lang.String" itemvalue="Python.linuxAI" />
+        <item index="3" class="java.lang.String" itemvalue="Python.audio_helpers" />
+        <item index="4" class="java.lang.String" itemvalue="Bash.install.sh" />
       </list>
     </recent_temporary>
   </component>
@@ -335,25 +406,33 @@
       <option name="project" value="LOCAL" />
       <updated>1523126138052</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commited from Pycharm">
+      <created>1523146338379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1523146338379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="45" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2998325" sideWeight="0.6661442" order="2" side_tool="true" content_ui="tabs" x="0" y="271" width="1366" height="208" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27470687" sideWeight="0.4909804" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16917923" sideWeight="0.3338558" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18652038" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4958124" sideWeight="0.4909804" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.6684953" order="2" side_tool="true" content_ui="tabs" x="0" y="271" width="1366" height="208" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2562814" sideWeight="0.3315047" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17398119" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -386,29 +465,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/linuxAI.py" />
-    <entry file="file://$PROJECT_DIR$/src/record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dependencies.py" />
     <entry file="file://$PROJECT_DIR$/PyAudio-0.2.11/INSTALL" />
     <entry file="file://$PROJECT_DIR$/google-cloud-sdk/install.sh" />
     <entry file="file://$PROJECT_DIR$/google-cloud-sdk/README" />
@@ -440,20 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assistantlib/pushtotalk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assistantlib/textinput.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1869">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -498,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assistantlib/audio_helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9360">
@@ -521,60 +556,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/runsample.py" />
     <entry file="file://$PROJECT_DIR$/src/linuxAI.py" />
-    <entry file="file://$PROJECT_DIR$/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="0" column="376" lean-forward="true" selection-start-line="0" selection-start-column="376" selection-end-line="0" selection-end-column="376" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.config/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="0" column="372" lean-forward="false" selection-start-line="0" selection-start-column="372" selection-end-line="0" selection-end-column="372" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.config/linuxAI-6616e71f1f08.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="4" column="657" lean-forward="false" selection-start-line="4" selection-start-column="657" selection-end-line="4" selection-end-column="657" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json" />
+    <entry file="file://$PROJECT_DIR$/src/.config/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json" />
+    <entry file="file://$PROJECT_DIR$/src/.config/linuxAI-6616e71f1f08.json" />
     <entry file="file://$PROJECT_DIR$/src/credentials/texttospeech/linuxAI-49241010769b.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/authenticate.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -582,23 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/runsample.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -606,17 +577,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/openapplication.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-248">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assistantlib/textinput.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" />
+    <entry file="file://$PROJECT_DIR$/src/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" />
+    <entry file="file://$PROJECT_DIR$/src/credentials/registerdevice/credentials.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credentials.json" />
+    <entry file="file://$PROJECT_DIR$/src/credentials/registerdevice/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/runsample.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/authenticate.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-271">
+          <caret line="25" column="118" lean-forward="false" selection-start-line="25" selection-start-column="118" selection-end-line="25" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assistantlib/pushtotalk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="422" column="0" lean-forward="true" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
