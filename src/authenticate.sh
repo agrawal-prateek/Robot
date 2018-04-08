@@ -38,3 +38,5 @@ cat <<EOF > $HOME/.linuxAI/details.json
     "model":"${MODEL}"
 }
 EOF
+
+gcloud auth activate-service-account --key-file="src/credentials/texttospeech/linuxAI-49241010769b.json"
