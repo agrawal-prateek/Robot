@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
-source /home/prateek/$HOME/env/bin/activate
+source $HOME/.linuxAI/env/bin/activate
 
 # Constants
 CREDENTIALS=src/credentials/registerdevice/credentials.json
@@ -21,7 +21,7 @@ read -p "Enter Your Device Type (LIGHT, SWITCH or OUTLET): " DEVICE_TYPE
 MODEL="$(openssl rand -hex 16)"
 
 cp ${CLIENT_SECRET} .
-
+cp ${CREDENTIALS} .
 # Register Device Modal
 googlesamples-assistant-devicetool register-model --manufacturer ${MANUFACTURER} --product-name ${PRODUCT_NAME} --description ${DESCRIPTION} --type ${DEVICE_TYPE} --model ${MODEL}
 
