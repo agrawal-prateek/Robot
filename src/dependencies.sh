@@ -5,13 +5,13 @@ mkdir -p $HOME/.linuxAI
 
 # Install Packages and create env
 sudo apt-get update
-sudo apt-get install python3-dev python3-venv
+sudo apt-get install -y python3-dev python3-venv
 python3 -m pip install --upgrade pip
 python3 -m venv $HOME/.linuxAI/env
 $HOME/.linuxAI/env/bin/python -m pip install --upgrade pip setuptools
 source $HOME/.linuxAI/env/bin/activate
 
-sudo apt-get install portaudio19-dev libffi-dev libssl-dev
+sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
 python -m pip install --upgrade google-assistant-library
 python -m pip install --upgrade google-assistant-sdk[samples]
 
@@ -46,12 +46,12 @@ sudo rm -rf /tmp/PyAudio-0.2.11
 
 pip install pyaudio
 
-#if ! [ -x "$(command -v jq)" ]; then
-#  sudo apt-get install jq
-#fi
-#if ! [ -x "$(command -v curl)" ]; then
-#  sudo apt install curl
-#fi
+if ! [ -x "$(command -v jq)" ]; then
+  sudo apt-get install -y jq
+fi
+if ! [ -x "$(command -v curl)" ]; then
+  sudo apt install -y curl
+fi
 #if ! [ -x "$(command -v mpg123)" ]; then
-#  sudo apt install mpg321
+# sudo apt install -y mpg321
 #fi
