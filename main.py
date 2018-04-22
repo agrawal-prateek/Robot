@@ -2,13 +2,16 @@
 
 import os
 import re
+from multiprocessing import Process
 
 from src.actions import openapplication, email
 
 query = 'can you please send the email'
+# query = 'open firefox'
 if re.search('open(.*)', query):
-    openapplication.openapp(re.search('open(.*)', query).group(1))
+    Process(target=openapplication.openapp, args=(re.search('open(.*)', query).group(1),)).start()
 elif re.search('(.*)send(.*)email(.*)', query):
-    email.sendmailui()
+    Process(target=email.sendmailui).start()
 else:
     os.system("src/speaktext.sh 'sorry, We can not proceed your request! Please try again with different keyword'")
+print(1)

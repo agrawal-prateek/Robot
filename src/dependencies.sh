@@ -9,6 +9,7 @@ sudo apt-get install -y python3-dev python3-venv
 sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
 sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
 python3 -m pip install --upgrade pip
+sudo apt-get install python3-tk python-tk
 
 if ! [ -x "$(command -v gcloud)" ]; then
   tar -xvzf src/lib/google-cloud-sdk.tar.gz -C $HOME/.linuxAI
