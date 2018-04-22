@@ -14,4 +14,3 @@ if [[ ${exitcode} != 0 ]]; then
     echo ${exiting_code_message}
     exit
 fi
-

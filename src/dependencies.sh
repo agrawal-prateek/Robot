@@ -44,7 +44,8 @@ sudo python3 setup.py install
 cd -
 sudo rm -rf /tmp/PyAudio-0.2.11
 
-pip install pyaudio
+pip install --upgrade pyaudio
+pip install --upgrade google-api-python-client
 
 if ! [ -x "$(command -v jq)" ]; then
   sudo apt-get install -y jq
@@ -52,6 +53,6 @@ fi
 if ! [ -x "$(command -v curl)" ]; then
   sudo apt install -y curl
 fi
-#if ! [ -x "$(command -v mpg123)" ]; then
-# sudo apt install -y mpg321
-#fi
+if ! [ -x "$(command -v mpg123)" ]; then
+ sudo apt install -y mpg321
+fi

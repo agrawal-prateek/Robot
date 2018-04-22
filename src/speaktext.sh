@@ -2,7 +2,7 @@
 
 # give firsh command line argument as a string to speak
 
-export GOOGLE_APPLICATION_CREDENTIALS='src/credentials/texttospeech/linuxAI-49241010769b.json'
+export GOOGLE_APPLICATION_CREDENTIALS='src/credentials/service_account/apis-5ecec14be349.json'
 curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" --data "{
   'input':{
     'text':'$1'
