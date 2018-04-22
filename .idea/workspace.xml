@@ -2,34 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a912a7de-ccbd-46b9-9b33-b444f3a112d5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/auth/gmail.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/auth2/client_secret.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/google-oauthlib-tool/credentials.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/googlesamples-assistant/device_config.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/credentials/service_account/apis-5ecec14be349.json" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/src/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/install.sh" afterPath="$PROJECT_DIR$/install.sh" />
-      <change beforePath="$PROJECT_DIR$/src/actions/openapplication.py" afterPath="$PROJECT_DIR$/src/actions/openapplication.py" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/README.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/__init__.py" afterPath="$PROJECT_DIR$/src/actions/email.py" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/assistant_helpers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/audio_helpers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/device_helpers.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/devicetool.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/pushtotalk.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assistantlib/textinput.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/authenticate.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/credentials/registerdevice/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/credentials/registerdevice/credentials.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/credentials/texttospeech/linuxAI-49241010769b.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="$PROJECT_DIR$/src/actions/email.py" afterPath="$PROJECT_DIR$/src/actions/email.py" />
       <change beforePath="$PROJECT_DIR$/src/dependencies.sh" afterPath="$PROJECT_DIR$/src/dependencies.sh" />
-      <change beforePath="$PROJECT_DIR$/src/record.py" afterPath="$PROJECT_DIR$/src/auth/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/src/runsample.sh" afterPath="$PROJECT_DIR$/src/runsample.sh" />
-      <change beforePath="$PROJECT_DIR$/src/speaktext.sh" afterPath="$PROJECT_DIR$/src/speaktext.sh" />
+      <change beforePath="$PROJECT_DIR$/src/temp/synthesizedaudio.mp3" afterPath="$PROJECT_DIR$/src/temp/synthesizedaudio.mp3" />
+      <change beforePath="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" afterPath="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" />
+      <change beforePath="$PROJECT_DIR$/src/uninstall.sh" afterPath="$PROJECT_DIR$/src/uninstall.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,34 +40,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="email.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="email.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/actions/email.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="728">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="install.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dependencies.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -133,7 +92,6 @@
         <option value="$PROJECT_DIR$/src/assistantlib/devicetool.py" />
         <option value="$PROJECT_DIR$/src/assistantlib/textinput.py" />
         <option value="$PROJECT_DIR$/details.json" />
-        <option value="$PROJECT_DIR$/src/uninstall.sh" />
         <option value="$PROJECT_DIR$/src/linuxAI.py" />
         <option value="$PROJECT_DIR$/commands" />
         <option value="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" />
@@ -145,7 +103,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/runsample.sh" />
         <option value="$PROJECT_DIR$/src/speaktext.sh" />
-        <option value="$PROJECT_DIR$/src/dependencies.sh" />
         <option value="$PROJECT_DIR$/src/authenticate.sh" />
         <option value="$PROJECT_DIR$/src/actions/openapplication.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
@@ -153,8 +110,10 @@
         <option value="$PROJECT_DIR$/src/getquery.py" />
         <option value="$PROJECT_DIR$/install.sh" />
         <option value="$PROJECT_DIR$/src/auth/gmail.py" />
+        <option value="$PROJECT_DIR$/src/uninstall.sh" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/src/actions/email.py" />
+        <option value="$PROJECT_DIR$/src/dependencies.sh" />
       </list>
     </option>
   </component>
@@ -237,18 +196,6 @@
               <item name="linuxAI" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="linuxAI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="linuxAI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="linuxAI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="linuxAI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -259,7 +206,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -486,18 +433,33 @@
       <option name="project" value="LOCAL" />
       <updated>1524334533904</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Commited from Pycharm">
+      <created>1524419905757</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1524419905757</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Commited from Pycharm">
+      <created>1524420014518</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1524420014518</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="45" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.60893416" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1557789" sideWeight="0.4909804" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.4909804" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.61128527" order="2" side_tool="true" content_ui="tabs" x="0" y="271" width="1366" height="208" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3802345" sideWeight="0.38871473" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.38871473" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14811912" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -566,13 +528,6 @@
     <entry file="file://$PROJECT_DIR$/ChangeLog" />
     <entry file="file://$PROJECT_DIR$/AUTHORS" />
     <entry file="file://$PROJECT_DIR$/README" />
-    <entry file="file://$PROJECT_DIR$/src/uninstall.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assistantlib/assistant_helpers.py" />
     <entry file="file://$PROJECT_DIR$/src/assistantlib/devicetool.py" />
     <entry file="file://$PROJECT_DIR$/src/assistantlib/device_helpers.py" />
@@ -603,6 +558,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -655,15 +611,39 @@
         <state relative-caret-position="182">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uninstall.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
           </folding>
@@ -672,27 +652,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/email.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="728">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>

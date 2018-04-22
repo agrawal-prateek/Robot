@@ -3,30 +3,18 @@
 HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
 mkdir -p $HOME/.linuxAI
 
-# Install Packages and create env
+# Install Packages
 sudo apt-get update
 sudo apt-get install -y python3-dev python3-venv
-python3 -m pip install --upgrade pip
-python3 -m venv $HOME/.linuxAI/env
-$HOME/.linuxAI/env/bin/python -m pip install --upgrade pip setuptools
-source $HOME/.linuxAI/env/bin/activate
-
 sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
-python -m pip install --upgrade google-assistant-library
-python -m pip install --upgrade google-assistant-sdk[samples]
+sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
+python3 -m pip install --upgrade pip
 
-# Install or update the authorization tool
-python -m pip install --upgrade google-auth-oauthlib[tool]
-
-# install google-cloud-sdk
 if ! [ -x "$(command -v gcloud)" ]; then
   tar -xvzf src/lib/google-cloud-sdk.tar.gz -C $HOME/.linuxAI
   $HOME/.linuxAI/google-cloud-sdk/install.sh
   sudo ln -s $HOME/.linuxAI/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 fi
-
-# install google-cloud-speech python library
-python -m pip install --upgrade google-cloud-speech==0.30.0
 
 # install PortAudio C/C++ library
 sudo tar -xvzf src/lib/portaudio.tar.gz -C /tmp
@@ -44,10 +32,6 @@ sudo python3 setup.py install
 cd -
 sudo rm -rf /tmp/PyAudio-0.2.11
 
-pip install --upgrade pyaudio
-pip install --upgrade google-api-python-client
-sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
-
 if ! [ -x "$(command -v jq)" ]; then
   sudo apt-get install -y jq
 fi
@@ -57,3 +41,18 @@ fi
 if ! [ -x "$(command -v mpg123)" ]; then
  sudo apt install -y mpg321
 fi
+
+#sudo apt install --upgrade virtualenv
+
+# Create virtualenv
+#virtualenv $HOME/.linuxAI/env --system-site-packages
+
+python3 -m venv $HOME/.linuxAI/env
+$HOME/.linuxAI/env/bin/python -m pip install --upgrade pip setuptools
+source $HOME/.linuxAI/env/bin/activate
+pip install --upgrade google-assistant-library
+pip install --upgrade google-assistant-sdk[samples]
+pip install --upgrade google-auth-oauthlib[tool]
+pip install --upgrade google-cloud-speech==0.30.0
+pip install --upgrade pyaudio
+pip install --upgrade google-api-python-client

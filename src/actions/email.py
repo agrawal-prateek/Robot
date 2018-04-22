@@ -31,3 +31,7 @@ def sendmail(sender, to, subject, body):
 def sendmailui():
     if not os.path.exists(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail', 'credentials.json')):
         gmail.authenticate()
+    try:
+        sendmail('prateekagrawal89760@gmail.com', 'prateek89760@gmail.com', 'sub', 'body')
+    except Exception as e:
+        print(e)

@@ -2,7 +2,6 @@
 
 import os
 import re
-import sys
 
 from src.actions import openapplication, email
 
