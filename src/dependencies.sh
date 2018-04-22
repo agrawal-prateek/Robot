@@ -46,6 +46,7 @@ sudo rm -rf /tmp/PyAudio-0.2.11
 
 pip install --upgrade pyaudio
 pip install --upgrade google-api-python-client
+sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
 
 if ! [ -x "$(command -v jq)" ]; then
   sudo apt-get install -y jq
