@@ -2,7 +2,7 @@
 
 # give firsh command line argument as a string to speak
 
-export GOOGLE_APPLICATION_CREDENTIALS='src/credentials/service_account/apis-5ecec14be349.json'
+export GOOGLE_APPLICATION_CREDENTIALS="/home/$USER/.linuxAI/linuxAI/src/credentials/service_account/apis-5ecec14be349.json"
 curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" --data "{
   'input':{
     'text':'$1'
@@ -15,10 +15,10 @@ curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-t
   'audioConfig':{
     'audioEncoding':'MP3'
   }
-}" "https://texttospeech.googleapis.com/v1beta1/text:synthesize" > "src/temp/synthesizeoutput.txt"
+}" "https://texttospeech.googleapis.com/v1beta1/text:synthesize" > "/home/$USER/.linuxAI/linuxAI/src/temp/synthesizeoutput.txt"
 
-audiobase=$(jq -r .audioContent src/temp/synthesizeoutput.txt)
-echo $audiobase>src/temp/synthesizeoutput.txt
+audiobase=$(jq -r .audioContent /home/$USER/.linuxAI/linuxAI/src/temp/synthesizeoutput.txt)
+echo $audiobase>/home/$USER/.linuxAI/linuxAI/src/temp/synthesizeoutput.txt
 
-base64 src/temp/synthesizeoutput.txt --decode > src/temp/synthesizedaudio.mp3
-mpg123 src/temp/synthesizedaudio.mp3
+base64 /home/$USER/.linuxAI/linuxAI/src/temp/synthesizeoutput.txt --decode > /home/$USER/.linuxAI/linuxAI/src/temp/synthesizedaudio.mp3
+mpg123 /home/$USER/.linuxAI/linuxAI/src/temp/synthesizedaudio.mp3

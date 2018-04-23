@@ -1,7 +1,9 @@
+import glob
+import operator
 import os
 import re
-import operator
-import glob
+
+home_dir = os.path.expanduser('~')
 
 
 def openapp(app_name):
@@ -24,4 +26,4 @@ def openapp(app_name):
                 found = 1
                 os.system(app + ' &')
     if not found:
-        os.system("src/speaktext.sh 'sorry, Application could not found'")
+        os.system(home_dir + "/.linuxAI/linuxAI/src/speaktext.sh 'sorry, Application could not found'")

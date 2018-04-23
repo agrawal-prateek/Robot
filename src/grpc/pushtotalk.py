@@ -25,6 +25,7 @@ DIALOG_FOLLOW_ON = embedded_assistant_pb2.DialogStateOut.DIALOG_FOLLOW_ON
 CLOSE_MICROPHONE = embedded_assistant_pb2.DialogStateOut.CLOSE_MICROPHONE
 DEFAULT_GRPC_DEADLINE = 60 * 3 + 5
 assistant_query_and_response = multiprocessing.Manager().dict()
+home_dir=os.path.expanduser('~')
 
 
 class SampleAssistant(object):
@@ -146,8 +147,8 @@ def main():
     project_id = 'linux-ai'
     device_model_id = 'linuxai-200815-linux-ai-znrszd'
     device_id = 'a052c58c-3dac-11e8-9cf3-2c6e851f5f04'
-    device_config = 'src/credentials/googlesamples-assistant/device_config.json'
-    credentials = 'src/credentials/google-oauthlib-tool/credentials.json'
+    device_config = home_dir+'/.linuxAI/linuxAI/src/credentials/googlesamples-assistant/device_config.json'
+    credentials = home_dir+'/.linuxAI/linuxAI/src/credentials/google-oauthlib-tool/credentials.json'
     lang = 'en-US'
     verbose = False
     input_audio_file = None
