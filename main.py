@@ -1,9 +1,12 @@
 #!/usr/bin/env /home/prateek/.linuxAI/env/bin/python
 
+import os
 from tkinter import *
 
 from src.actions import openapplication, email
 from src.grpc import pushtotalk
+
+home_dir = os.path.expanduser('~')
 
 
 def runapp():
@@ -22,7 +25,7 @@ approot = Tk()
 approot.title('LinuxAI')
 approot.config(bg='#000', bd=0)
 
-photo1 = PhotoImage(file='src/static/artificial_intelligence.gif', format='gif -index 1')
+photo1 = PhotoImage(file=home_dir+'/.linuxAI/linuxAI/src/static/artificial_intelligence.gif', format='gif -index 1')
 label = Label(approot, image=photo1, bd=0, bg='#000')
 label.pack(fill=BOTH)
 
