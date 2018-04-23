@@ -83,7 +83,7 @@ def sendmailui():
     b1.grid(row=1, column=1, padx=60)
     b2 = Button(f1, text="Send Email", width=10, command=sendmail)
     b2.grid(row=1, column=2)
-    errormessage = Label(f1, text='d', bd=0, bg='#fff', fg='#50ff50')
+    errormessage = Label(f1, text='', bd=0, bg='#fff', fg='#50ff50')
     errormessage.grid(row=2, column=1)
     root.bind('<Escape>', destroy)
     root.mainloop()
