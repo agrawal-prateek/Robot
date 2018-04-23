@@ -34,3 +34,4 @@ Name[en_IN]=linuxAI
 ">linuxAI.desktop
 
 sudo mv linuxAI.desktop /usr/share/applications/
+sed -i "1s/.*/#\!\/usr\/bin\/env \/home\/$USER\/.linuxAI\/env\/bin\/python/" main.py
