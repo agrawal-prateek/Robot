@@ -7,6 +7,10 @@ src/uninstall.sh
 chmod +x src/dependencies.sh
 src/dependencies.sh
 
+HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
+mkdir -p ${HOME}/.linuxAI/linuxAI
+cp -R . ${HOME}/.linuxAI/linuxAI/
+
 exitcode=$?;
 if [[ ${exitcode} != 0 ]]; then
     echo "couldn't install dependencies!!"

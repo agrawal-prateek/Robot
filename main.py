@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env /home/prateek/.linuxAI/env/bin/python
 
 from tkinter import *
 

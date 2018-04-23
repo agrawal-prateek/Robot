@@ -25,7 +25,7 @@ def destroy(*args):
 def sendmail():
     global e1, e2, e3, e4, errormessage
     try:
-        store = file.Storage(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail', 'credentials.json'))
+        store = file.Storage('src/credentials/authenticated/gmail/credentials.json')
         creds = store.get()
         service = build('gmail', 'v1', http=creds.authorize(Http()))
 
@@ -49,7 +49,7 @@ def sendmail():
 
 def sendmailui():
     global root, e1, e2, e3, e4, errormessage
-    if not os.path.exists(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail', 'credentials.json')):
+    if not os.path.exists(os.path.join('src/credentials/authenticated/gmail', 'credentials.json')):
         gmail.authenticate()
 
     root = Tk()

@@ -8,7 +8,6 @@ from oauth2client import file, client, tools
 
 
 def authenticate():
-    home_dir = os.path.expanduser('~')
     SCOPES = [
         'https://www.googleapis.com/auth/gmail.readonly',
         'https://www.googleapis.com/auth/gmail.compose',
@@ -21,15 +20,9 @@ def authenticate():
         'https://www.googleapis.com/auth/gmail.settings.sharing',
         'https://mail.google.com/'
     ]
-    if not os.path.exists(os.path.join(home_dir, '.linuxAI', '.credentials')):
-        os.mkdir(os.path.join(home_dir, '.linuxAI', '.credentials'))
-        os.mkdir(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail'))
-    if not os.path.exists(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail')):
-        os.mkdir(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail'))
-    if os.path.exists(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail', 'credentials.json')):
-        os.remove(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail', 'credentials.json'))
-
-    store = file.Storage(os.path.join(home_dir, '.linuxAI', '.credentials', 'gmail', 'credentials.json'))
+    if not os.path.exists('src/credentials/authenticated/gmail'):
+        os.mkdir('src/credentials/authenticated/gmail')
+    store = file.Storage(os.path.join('src/credentials/authenticated/gmail', 'credentials.json'))
     creds = store.get()
     if not creds or creds.invalid:
         flow = client.flow_from_clientsecrets('src/credentials/auth2/client_secret.json', SCOPES)

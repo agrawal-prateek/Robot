@@ -57,3 +57,4 @@ pip install --upgrade google-auth-oauthlib[tool]
 pip install --upgrade google-cloud-speech==0.30.0
 pip install --upgrade pyaudio
 pip install --upgrade google-api-python-client
+
