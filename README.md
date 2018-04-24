@@ -9,15 +9,9 @@ Currently Ubuntu and Debian based operating systems are supported with this soft
 
  First open terminal in the project directory.
 
- To give the permission to files to be executed, run the following commands
-
-	chmod +x *
-
-	chmod +x src/*
-
  Next install the software by typing the following command
 
-	./install.sh
+	bash install.sh
 
 
 **Note: Installation procedure may 15 to 20 minutes. Make sure that you have stable internet connection.**
@@ -26,9 +20,22 @@ Currently Ubuntu and Debian based operating systems are supported with this soft
 
  You can launch the software either from Start Menu or from command line by typing the following command
 
-	linuxai
+	linuxAI
 
-For any query contact me on
+## Running the commands
+
+ After launching the software, you can ask or run any task by giving the voice command. Press **Run** button to give voic command. Here are some examples:
+
+- Ok, open calculator
+- open settings
+- Send an email please!
+- Pleae tell me, how to make tea
+- How is wether today
+- Play the music
+- what is my current location
+
+
+If you find any bug or any idea for further improvement in this software, you can contact me on
 
 [prateekagrawal89760@gmail.com ](mailto://prateekagrawal89760@gmail.com)
 

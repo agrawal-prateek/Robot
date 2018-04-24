@@ -15,7 +15,7 @@ def runapp():
         query = pushtotalk.main()
     except Exception as e:
         print(e)
-    if re.search('open(.*)', query):
+    if re.search('(.*)open(.*)', query):
         openapplication.openapp(re.search('open(.*)', query).group(1))
     elif re.search('(.*)send(.*)email(.*)', query):
         email.sendmailui()
