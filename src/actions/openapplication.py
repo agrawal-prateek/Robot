@@ -26,4 +26,4 @@ def openapp(app_name):
                 found = 1
                 os.system(app + ' &')
     if not found:
-        os.system(home_dir + "/.linuxAI/linuxAI/src/speaktext.sh 'sorry, Application could not found'")
+        os.system(home_dir + "/Robot/src/speaktext.sh 'sorry, Application could not found'")

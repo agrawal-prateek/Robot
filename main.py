@@ -1,38 +1,58 @@
-#!/usr/bin/env /home/prateek/.linuxAI/env/bin/python
+#!/usr/bin/env /home/pi/env/bin/python
 
-import os
-from tkinter import *
+import re
+from src.grpc.pushtotalk import main
+from src.actions import email
+from src.actions import shutdown
+from src.actions import volume
+from src.actions import display
 
-from src.actions import openapplication, email
-from src.grpc import pushtotalk
-
-home_dir = os.path.expanduser('~')
-
-
-def runapp():
+while True:
     query = None
     try:
-        query = pushtotalk.main()
+        query = main()
     except Exception as e:
         print(e)
-    if re.search('(.*)open(.*)', query):
-        openapplication.openapp(re.search('open(.*)', query).group(1))
-    elif re.search('(.*)send(.*)email(.*)', query):
+
+    # Send Email
+    if re.search('(.*)send(.*)email(.*)', query):
         email.sendmailui()
 
+    # Shut Down
+    elif re.search('(.*)shut down(.*)', query):
+        shutdown.shutdown()
 
-approot = Tk()
-approot.title('LinuxAI')
-approot.config(bg='#000', bd=0)
+    # Decrease Volume
+    elif re.search('(.*)turn(.*)down(.*)volume(.*)', query) \
+            or re.search('(.*)decrease(.*)volume(.*)', query) \
+            or re.search('(.*)slow(.*)volume(.*)', query):
+        volume.decrease()
 
-photo1 = PhotoImage(file=home_dir+'/.linuxAI/linuxAI/src/static/artificial_intelligence.gif', format='gif -index 1')
-label = Label(approot, image=photo1, bd=0, bg='#000')
-label.pack(fill=BOTH)
+    # Increase Volume
+    elif re.search('(.*)turn(.*)up(.*)volume(.*)', query) \
+            or re.search('(.*)increase(.*)volume(.*)', query) \
+            or re.search('(.*)high(.*)volume(.*)', query) \
+            or re.search('(.*)speak(.*)loud(.*)', query):
+        volume.increase()
 
-appb2 = Button(approot, text="Run", width=10, command=runapp, bg='#fff')
-appb2.pack()
-templabel = Label(approot, fg='#000', bg='#000')
-templabel.pack()
-approot.bind('<Escape>', exit)
-approot.resizable(False, False)
-approot.mainloop()
+    # Tell me about This image
+    elif re.search('(.*)tell(.*)this(.*)image(.*)', query) \
+            or re.search('(.*)know(.*)this(.*)image(.*)', query) \
+            or re.search('(.*)tell(.*)this(.*)picture(.*)', query) \
+            or re.search('(.*)know(.*)this(.*)image(.*)', query):
+        display.tell_about_image()
+
+    # Show Pictures
+    elif re.search('(.*)show(.*)pictures(.*)', query):
+        display.show_images(query)
+
+    # Show Calender
+    elif re.search('(.*)show(.*)calender(.*)', query):
+        display.show_calender()
+
+    # Show videos
+    elif re.search('(.*)show(.*)trailer(.*)', query) \
+            or re.search('(.*)show(.*)youtube(.*)', query) \
+            or re.search('(.*)show(.*)video(.*)', query) \
+            or re.search('(.*)show(.*)recipe(.*)', query):
+        display.show_video(query)

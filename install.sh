@@ -15,23 +15,4 @@ if [[ ${exitcode} != 0 ]]; then
     exit
 fi
 
-HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
-mkdir -p ${HOME}/.linuxAI/linuxAI
-cp -R . ${HOME}/.linuxAI/linuxAI/
-
-
-echo "[Desktop Entry]
-Name=LinuxAI
-Comment=A Linux Assistant
-Keywords=ai;assistant;linuxai;
-Exec=$HOME/.linuxAI/linuxAI/main.py
-Icon=$HOME/linuxAI/src/static/artificial_intelligence.gif
-Terminal=false
-Type=Application
-Categories=GNOME;GTK;
-StartupNotify=true
-Name[en_IN]=linuxAI
-">linuxAI.desktop
-
-sudo mv linuxAI.desktop /usr/share/applications/
-sed -i "1s/.*/#\!\/usr\/bin\/env \/home\/$USER\/.linuxAI\/env\/bin\/python/" main.py
+sed -i "1s/.*/#\!\/usr\/bin\/env \/home\/$USER\/env\/bin\/python/" main.py

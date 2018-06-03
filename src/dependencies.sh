@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
-mkdir -p $HOME/.linuxAI
 
 # Install Packages
 sudo apt-get update
@@ -11,11 +10,9 @@ sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gt
 python3 -m pip install --upgrade pip
 sudo apt-get install python3-tk python-tk
 
-if ! [ -x "$(command -v gcloud)" ]; then
-  tar -xvzf src/lib/google-cloud-sdk.tar.gz -C $HOME/.linuxAI
-  $HOME/.linuxAI/google-cloud-sdk/install.sh
-  sudo ln -s $HOME/.linuxAI/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
-fi
+tar -xvzf src/lib/google-cloud-sdk.tar.gz -C $HOME
+$HOME/google-cloud-sdk/install.sh
+sudo ln -s $HOME/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 
 # install PortAudio C/C++ library
 sudo tar -xvzf src/lib/portaudio.tar.gz -C /tmp
@@ -43,18 +40,15 @@ if ! [ -x "$(command -v mpg123)" ]; then
  sudo apt install -y mpg321
 fi
 
-#sudo apt install --upgrade virtualenv
-
-# Create virtualenv
-#virtualenv $HOME/.linuxAI/env --system-site-packages
-
-python3 -m venv $HOME/.linuxAI/env
-$HOME/.linuxAI/env/bin/python -m pip install --upgrade pip setuptools
-source $HOME/.linuxAI/env/bin/activate
+python3 -m venv $HOME/env
+$HOME/env/bin/python -m pip install --upgrade pip setuptools
+source $HOME/env/bin/activate
 pip install --upgrade google-assistant-library
 pip install --upgrade google-assistant-sdk[samples]
 pip install --upgrade google-auth-oauthlib[tool]
 pip install --upgrade google-cloud-speech==0.30.0
 pip install --upgrade pyaudio
 pip install --upgrade google-api-python-client
+pip install --upgrade oauth2client
+pip install --upgrade SpeechRecognition
 
