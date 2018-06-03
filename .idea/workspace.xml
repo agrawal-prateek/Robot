@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a912a7de-ccbd-46b9-9b33-b444f3a112d5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/display.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/shutdown.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/volume.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp44.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/linuxAI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Robot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/email.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/openapplication.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/openapplication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/gmail.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/gmail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dependencies.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/dependencies.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/speaktext.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/speaktext.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/temp/synthesizedaudio.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/temp/synthesizedaudio.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uninstall.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/uninstall.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,8 +42,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="296">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#40#49#0" expanded="true" />
               </folding>
@@ -226,17 +214,6 @@
               <item name="Robot" type="b2602c69:ProjectViewProjectNode" />
               <item name="Robot" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Robot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Robot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Robot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Robot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -278,7 +255,7 @@
   </component>
   <component name="RunManager" selected="Python.email">
     <configuration name="a.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
-      <module name="linuxAI" />
+      <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
       <option name="INTERPRETER_PATH" value="/usr/bin/env" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -287,7 +264,7 @@
       <option name="PARAMETERS" value="" />
     </configuration>
     <configuration name="email" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linuxAI" />
+      <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -306,7 +283,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linuxAI" />
+      <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -325,7 +302,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="pushtotalk" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linuxAI" />
+      <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -344,7 +321,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linuxAI" />
+      <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -530,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524516907303</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Commited from Pycharm">
+      <created>1528046886352</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1528046886352</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -758,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="296">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#40#49#0" expanded="true" />
           </folding>
