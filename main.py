@@ -56,5 +56,3 @@ while True:
             or re.search('(.*)show(.*)video(.*)', query) \
             or re.search('(.*)show(.*)recipe(.*)', query):
         display.show_video(query)
-
-
