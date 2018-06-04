@@ -16,3 +16,4 @@ if [[ ${exitcode} != 0 ]]; then
 fi
 
 sed -i "1s/.*/#\!\/usr\/bin\/env \/home\/$USER\/env\/bin\/python/" main.py
+export GOOGLE_APPLICATION_CREDENTIALS="/home/$USER/Robot/src/credentials/service_account/apis-5ecec14be349.json"

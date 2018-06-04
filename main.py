@@ -1,16 +1,16 @@
 #!/usr/bin/env /home/pi/env/bin/python
 
 import re
-from src.grpc.pushtotalk import main
-from src.actions import send
-from src.actions import shutdown
-from src.actions import volume
-from src.actions import display
-from src.actions import sound
-from src.actions import restart
+
 from src.actions import alarm
 from src.actions import call
-from src.actions import search
+from src.actions import display
+from src.actions import restart
+from src.actions import send
+from src.actions import shutdown
+from src.actions import sound
+from src.actions import volume
+from src.grpc.pushtotalk import main
 
 while True:
     query = None
@@ -50,7 +50,7 @@ while True:
             or re.search('(.*)know(.*)this(.*)image(.*)', query) \
             or re.search('(.*)tell(.*)this(.*)picture(.*)', query) \
             or re.search('(.*)know(.*)this(.*)image(.*)', query):
-        display.tell_about_image(query)
+        display.tell_about_image()
 
     # Show Pictures
     elif re.search('(.*)show(.*)pictures(.*)', query):
@@ -116,4 +116,89 @@ while True:
 
     # Get Price
     elif re.search('(.*)tell(.*)price(.*)', query):
-        search.get_price(query)
+        pass
+
+    # Throw/Roll a dice
+    elif re.search('(.*)roll(.*)dice(.*)', query) \
+            or re.search('(.*)throw(.*)dice(.*)', query):
+        pass
+
+    # Flip a coin
+    elif re.search('(.*)flip(.*)coin(.*)', query) \
+            or re.search('(.*)throw(.*)coin(.*)', query):
+        pass
+
+    # Random No.
+    elif re.search('(.*)pick(.*)between(.*)', query) \
+            or re.search('(.*)random(.*)between(.*)', query):
+        pass
+
+    # Definition of a word
+    elif re.search('(.*)what(.*)mean(.*)', query) \
+            or re.search('(.*)how(.*)define(.*)', query):
+        pass
+
+    # Spell a word
+    elif re.search('(.*)how(.*)spell(.*)', query):
+        pass
+
+    # Sports
+    elif re.search('for sports', query):
+        pass
+
+    # Send to tablet
+    elif re.search('(.*)send(.*)my(.*)tablet(.*)', query) \
+            or re.search('(.*)show(.*)my(.*)tablet(.*)', query) \
+            or re.search('(.*)show(.*)my(.*)tab(.*)', query):
+        pass
+
+    # Show current screen to other`s tablet
+    elif re.search('(.*)show(.*)on(.*)tablet(.*)', query) \
+            or re.search('(.*)show(.*)on(.*)tab(.*)', query):
+        pass
+
+    # Lights ON/OFF
+    elif re.search('(.*)(turn|switch)(.*)(on|off)(.*)', query):
+        pass
+
+    # To Dim Lights/fan
+    elif re.search('(.*)dim(.*)', query):
+        pass
+
+    # Temperature
+    elif re.search('(.*)set(.*)temperature(.*)', query) \
+            or re.search('(.*)raise(.*)temperature(.*)', query):
+        pass
+
+    # Door Lock
+    elif re.search('(.*)lock(.*)door(.*)', query) \
+            or re.search('(.*)lock(.*)gate(.*)', query):
+        pass
+
+    # Discover/Find Devices
+    elif re.search('(.*)discover(.*)device(.*)', query) \
+            or re.search('(.*)find(.*)my(.*)device(.*)', query) \
+            or re.search('(.*)where(.*)device(.*)', query):
+        pass
+
+    # Bluetooth
+    elif re.search('(.*)connect(.*)to(.*)', query) \
+            or re.search('(.*)bluetooth(.*)', query):
+        pass
+
+    # Switch Account
+    elif re.search('(.*)switch(.*)account(.*)', query):
+        pass
+
+    # Get Profile
+    elif re.search('(.*)whose(.*)profile(.*)', query) \
+            or re.search('(.*)who(.*)is(.*)this(.*)', query):
+        pass
+
+    # GOOD Morning
+    elif re.search('(.*)good(.*)morning(.*)', query):
+        pass
+
+    # Tell a joke
+    elif re.search('(.*)tell(.*)joke(.*)', query):
+        pass

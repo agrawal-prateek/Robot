@@ -51,4 +51,6 @@ pip install --upgrade pyaudio
 pip install --upgrade google-api-python-client
 pip install --upgrade oauth2client
 pip install --upgrade SpeechRecognition
+pip install --upgrade twilio==6.14.3
+pip install --upgrade google-cloud-vision
 

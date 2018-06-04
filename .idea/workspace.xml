@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a912a7de-ccbd-46b9-9b33-b444f3a112d5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/alarm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/call.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/restart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/sound.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snapcraft.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/send.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/credentials/auth2/client_secret.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/credentials/auth2/client_secret.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dependencies.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/dependencies.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/speaktext.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/speaktext.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp44.py" beforeDir="false" afterPath="$PROJECT_DIR$/temp44.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,6 +23,7 @@
     <SUITE FILE_PATH="coverage/linuxAI$devicetool.coverage" NAME="devicetool Coverage Results" MODIFIED="1517762767603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
     <SUITE FILE_PATH="coverage/linuxAI$gmail.coverage" NAME="gmail Coverage Results" MODIFIED="1524339027203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/auth" />
     <SUITE FILE_PATH="coverage/linuxAI$audio_helpers.coverage" NAME="audio_helpers Coverage Results" MODIFIED="1517834773443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
+    <SUITE FILE_PATH="coverage/Robot$temp44.coverage" NAME="temp44 Coverage Results" MODIFIED="1528127049552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/linuxAI$main.coverage" NAME="main Coverage Results" MODIFIED="1524511406856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/linuxAI$pushtotalk.coverage" NAME="pushtotalk Coverage Results" MODIFIED="1524490688950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/grpc" />
     <SUITE FILE_PATH="coverage/linuxAI$textinput.coverage" NAME="textinput Coverage Results" MODIFIED="1523177640976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
@@ -45,13 +46,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="119" column="8" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+            <state relative-caret-position="346">
+              <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding>
                 <element signature="e#40#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="display.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/actions/display.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp44.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/temp44.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="10" selection-start-line="10" selection-end-line="25" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,8 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/INSTALL" />
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/authenticate.py" />
         <option value="$PROJECT_DIR$/test.sh" />
         <option value="$PROJECT_DIR$/src/assistantlib/__init__.py" />
@@ -126,12 +146,8 @@
         <option value="$PROJECT_DIR$/bin/linuxAI.desktop" />
         <option value="$PROJECT_DIR$/src/grpc/pushtotalk.py" />
         <option value="$PROJECT_DIR$/src/uninstall.sh" />
-        <option value="$PROJECT_DIR$/install.sh" />
         <option value="$PROJECT_DIR$/src/actions/email.py" />
         <option value="$PROJECT_DIR$/src/auth/gmail.py" />
-        <option value="$PROJECT_DIR$/src/speaktext.sh" />
-        <option value="$PROJECT_DIR$/src/dependencies.sh" />
-        <option value="$PROJECT_DIR$/temp44.py" />
         <option value="$PROJECT_DIR$/src/actions/shutdown.py" />
         <option value="$PROJECT_DIR$/src/actions/volume.py" />
         <option value="$PROJECT_DIR$/src/actions/openapplication.py" />
@@ -140,12 +156,18 @@
         <option value="$PROJECT_DIR$/src/actions/sound.py" />
         <option value="$PROJECT_DIR$/src/actions/restart.py" />
         <option value="$PROJECT_DIR$/src/actions/alarm.py" />
-        <option value="$PROJECT_DIR$/src/actions/display.py" />
         <option value="$PROJECT_DIR$/src/actions/call.py" />
         <option value="$PROJECT_DIR$/src/actions/send.py" />
         <option value="$PROJECT_DIR$/src/actions/price.py" />
         <option value="$PROJECT_DIR$/src/actions/search.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/src/credentials/auth2/client_secret.json" />
+        <option value="$PROJECT_DIR$/src/dependencies.sh" />
+        <option value="$PROJECT_DIR$/src/speaktext.sh" />
+        <option value="$PROJECT_DIR$/install.sh" />
+        <option value="$PROJECT_DIR$/temp.py" />
+        <option value="$PROJECT_DIR$/temp44.py" />
+        <option value="$PROJECT_DIR$/src/actions/display.py" />
       </list>
     </option>
   </component>
@@ -266,7 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.email">
+  <component name="RunManager" selected="Python.temp44">
     <configuration name="a.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
@@ -274,6 +296,15 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a.sh" />
+      <option name="PARAMETERS" value="" />
+    </configuration>
+    <configuration name="install.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <module name="Robot" />
+      <option name="INTERPRETER_OPTIONS" value="bash" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/install.sh" />
       <option name="PARAMETERS" value="" />
     </configuration>
     <configuration name="email" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -314,26 +345,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="pushtotalk" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Robot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/grpc" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/grpc/pushtotalk.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="temp44" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -346,26 +358,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temp44.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python.pushtotalk" />
       <item itemvalue="Python.main" />
       <item itemvalue="Bash.a.sh" />
       <item itemvalue="Python.email" />
+      <item itemvalue="Python.temp44" />
+      <item itemvalue="Bash.install.sh" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.temp44" />
+        <item itemvalue="Bash.install.sh" />
         <item itemvalue="Python.email" />
         <item itemvalue="Python.main" />
         <item itemvalue="Bash.a.sh" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.pushtotalk" />
       </list>
     </recent_temporary>
   </component>
@@ -548,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528047271093</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Commited from Pycharm">
+      <created>1528050986681</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1528050986681</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -556,14 +575,13 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.60893416" side_tool="true" weight="0.32998326" />
-      <window_info anchor="right" x="0" y="0" width="274" height="543" id="Documentation" side_tool="true" weight="0.32948422" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32885906" />
-      <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4905956" weight="0.328594" />
-      <window_info anchor="bottom" x="0" y="271" width="1366" height="208" id="Run" order="2" sideWeight="0.6136364" side_tool="true" weight="0.28067228" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.38636363" visible="true" weight="0.0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17013086" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.60893416" side_tool="true" weight="0.32998326" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32885906" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.4905956" weight="0.328594" />
+      <window_info anchor="bottom" x="0" y="271" width="1366" height="208" id="Run" order="2" sideWeight="0.6150885" side_tool="true" weight="0.2184466" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.38491148" visible="true" weight="0.17799352" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16859123" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="Database" order="3" weight="0.0" />
       <window_info id="SciView" order="4" weight="0.3296131" />
@@ -574,12 +592,39 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32885906" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32885906" />
+      <window_info anchor="right" x="0" y="0" width="274" height="543" id="Documentation" order="3" side_tool="true" weight="0.32948422" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="9" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32847896" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="13" visible="true" weight="0.32885906" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32847896" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16859123" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32885906" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="SciView" order="4" weight="0.3296131" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" x="0" y="271" width="1366" height="208" id="Run" order="2" sideWeight="0.6136364" side_tool="true" weight="0.28067228" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32885906" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.4905956" weight="0.328594" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39932886" />
+      <window_info anchor="right" x="0" y="0" width="274" height="543" id="Documentation" order="3" side_tool="true" weight="0.32948422" />
+      <window_info id="Database" order="3" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.38636363" visible="true" weight="0.2184466" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.60893416" side_tool="true" weight="0.32998326" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="13" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -601,9 +646,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/.config/client_secret_71131800372-dop7miagipbqink2ecnr33so61q3li0t.apps.googleusercontent.com.json" />
-    <entry file="file://$PROJECT_DIR$/src/.config/linuxAI-6616e71f1f08.json" />
-    <entry file="file://$PROJECT_DIR$/src/credentials/texttospeech/linuxAI-49241010769b.json" />
     <entry file="file://$PROJECT_DIR$/src/temp/synthesizeoutput.txt" />
     <entry file="file://$PROJECT_DIR$/src/assistantlib/textinput.py" />
     <entry file="file://$PROJECT_DIR$/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" />
@@ -699,38 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/speaktext.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/grpc/pushtotalk.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5409">
           <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp44.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -748,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/openapplication.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/sound.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -766,13 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="8" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/display.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -790,9 +790,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/price.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/price.py" />
     <entry file="file://$PROJECT_DIR$/src/actions/search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -810,13 +808,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/credentials/auth2/client_secret.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dependencies.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/speaktext.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels.json" />
+    <entry file="file://$PROJECT_DIR$/temp.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="119" column="8" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+        <state relative-caret-position="346">
+          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding>
             <element signature="e#40#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="18" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/openapplication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="28" column="92" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp44.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" selection-start-line="10" selection-end-line="25" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
         </state>
       </provider>
     </entry>
