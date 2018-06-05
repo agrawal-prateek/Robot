@@ -147,8 +147,8 @@ def main():
     project_id = 'linux-ai'
     device_model_id = 'linuxai-200815-linux-ai-znrszd'
     device_id = 'a052c58c-3dac-11e8-9cf3-2c6e851f5f04'
-    device_config = home_dir+'/.linuxAI/linuxAI/src/credentials/googlesamples-assistant/device_config.json'
-    credentials = home_dir+'/.linuxAI/linuxAI/src/credentials/google-oauthlib-tool/credentials.json'
+    device_config = home_dir+'/Robot/src/credentials/googlesamples-assistant/device_config.json'
+    credentials = home_dir+'/Robot/src/credentials/google-oauthlib-tool/credentials.json'
     lang = 'en-US'
     verbose = False
     input_audio_file = None

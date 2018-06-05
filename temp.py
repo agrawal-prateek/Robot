@@ -1,188 +1,165 @@
+#!/usr/bin/env python
+
+from __future__ import division
+
+import re
+import sys
+
+from google.cloud import speech
+from google.cloud.speech import enums
+from google.cloud.speech import types
 import pyaudio
-import wave
-import audioop
-from collections import deque
-import os
-import urllib2
-import urllib
-import time
-import math
+from six.moves import queue
 
-LANG_CODE = 'en-US'  # Language to use
-
-GOOGLE_SPEECH_URL = 'https://www.google.com/speech-api/v1/recognize?xjerr=1&client=chromium&pfilter=2&lang=%s&maxresults=6' % (LANG_CODE)
-
-FLAC_CONV = 'flac -f'  # We need a WAV to FLAC converter. flac is available
-                       # on Linux
-
-# Microphone stream config.
-CHUNK = 1024  # CHUNKS of bytes to read each time from mic
-FORMAT = pyaudio.paInt16
-CHANNELS = 1
 RATE = 16000
-THRESHOLD = 2500  # The threshold intensity that defines silence
-                  # and noise signal (an int. lower than THRESHOLD is silence).
-
-SILENCE_LIMIT = 1  # Silence limit in seconds. The max ammount of seconds where
-                   # only silence is recorded. When this time passes the
-                   # recording finishes and the file is delivered.
-
-PREV_AUDIO = 0.5  # Previous audio (in seconds) to prepend. When noise
-                  # is detected, how much of previously recorded audio is
-                  # prepended. This helps to prevent chopping the beggining
-                  # of the phrase.
+CHUNK = int(RATE / 10)  # 100ms
 
 
-def audio_int(num_samples=50):
-    """ Gets average audio intensity of your mic sound. You can use it to get
-        average intensities while you're talking and/or silent. The average
-        is the avg of the 20% largest intensities recorded.
+class MicrophoneStream(object):
+    """Opens a recording stream as a generator yielding the audio chunks."""
+    def __init__(self, rate, chunk):
+        self._rate = rate
+        self._chunk = chunk
+
+        # Create a thread-safe buffer of audio data
+        self._buff = queue.Queue()
+        self.closed = True
+
+    def __enter__(self):
+        self._audio_interface = pyaudio.PyAudio()
+        self._audio_stream = self._audio_interface.open(
+            format=pyaudio.paInt16,
+            # The API currently only supports 1-channel (mono) audio
+            # https://goo.gl/z757pE
+            channels=1, rate=self._rate,
+            input=True, frames_per_buffer=self._chunk,
+            # Run the audio stream asynchronously to fill the buffer object.
+            # This is necessary so that the input device's buffer doesn't
+            # overflow while the calling thread makes network requests, etc.
+            stream_callback=self._fill_buffer,
+        )
+
+        self.closed = False
+
+        return self
+
+    def __exit__(self, type, value, traceback):
+        self._audio_stream.stop_stream()
+        self._audio_stream.close()
+        self.closed = True
+        # Signal the generator to terminate so that the client's
+        # streaming_recognize method will not block the process termination.
+        self._buff.put(None)
+        self._audio_interface.terminate()
+
+    def _fill_buffer(self, in_data, frame_count, time_info, status_flags):
+        """Continuously collect data from the audio stream, into the buffer."""
+        self._buff.put(in_data)
+        return None, pyaudio.paContinue
+
+    def generator(self):
+        while not self.closed:
+            # Use a blocking get() to ensure there's at least one chunk of
+            # data, and stop iteration if the chunk is None, indicating the
+            # end of the audio stream.
+            chunk = self._buff.get()
+            if chunk is None:
+                return
+            data = [chunk]
+
+            # Now consume whatever other data's still buffered.
+            while True:
+                try:
+                    chunk = self._buff.get(block=False)
+                    if chunk is None:
+                        return
+                    data.append(chunk)
+                except queue.Empty:
+                    break
+
+            yield b''.join(data)
+# [END audio_stream]
+
+
+def listen_print_loop(responses):
+    """Iterates through server responses and prints them.
+
+    The responses passed is a generator that will block until a response
+    is provided by the server.
+
+    Each response may contain multiple results, and each result may contain
+    multiple alternatives; for details, see https://goo.gl/tjCPAU.  Here we
+    print only the transcription for the top alternative of the top result.
+
+    In this case, responses are provided for interim results as well. If the
+    response is an interim one, print a line feed at the end of it, to allow
+    the next result to overwrite it, until the response is a final one. For the
+    final one, print a newline to preserve the finalized transcription.
     """
+    num_chars_printed = 0
+    for response in responses:
+        if not response.results:
+            continue
 
-    print ("Getting intensity values from mic.")
-    p = pyaudio.PyAudio()
+        # The `results` list is consecutive. For streaming, we only care about
+        # the first result being considered, since once it's `is_final`, it
+        # moves on to considering the next utterance.
+        result = response.results[0]
+        if not result.alternatives:
+            continue
 
-    stream = p.open(format=FORMAT,
-                    channels=CHANNELS,
-                    rate=RATE,
-                    input=True,
-                    frames_per_buffer=CHUNK)
+        # Display the transcription of the top alternative.
+        transcript = result.alternatives[0].transcript
 
-    values = [math.sqrt(abs(audioop.avg(stream.read(CHUNK), 4)))
-              for x in range(num_samples)]
-    values = sorted(values, reverse=True)
-    r = sum(values[:int(num_samples * 0.2)]) / int(num_samples * 0.2)
-    print (" Finished ")
-    print (" Average audio intensity is ")
-    stream.close()
-    p.terminate()
-    return r
+        # Display interim results, but with a carriage return at the end of the
+        # line, so subsequent lines will overwrite them.
+        #
+        # If the previous result was longer than this one, we need to print
+        # some extra spaces to overwrite the previous result
+        overwrite_chars = ' ' * (num_chars_printed - len(transcript))
 
+        if not result.is_final:
+            sys.stdout.write(transcript + overwrite_chars + '\r')
+            sys.stdout.flush()
 
-def listen_for_speech(threshold=THRESHOLD, num_phrases=-1):
-    """
-    Listens to Microphone, extracts phrases from it and sends it to
-    Google's TTS service and returns response. a "phrase" is sound
-    surrounded by silence (according to threshold). num_phrases controls
-    how many phrases to process before finishing the listening process
-    (-1 for infinite).
-    """
+            num_chars_printed = len(transcript)
 
-    #Open stream
-    p = pyaudio.PyAudio()
-
-    stream = p.open(format=FORMAT,
-                    channels=CHANNELS,
-                    rate=RATE,
-                    input=True,
-                    frames_per_buffer=CHUNK)
-
-    print ("* Listening mic. ")
-    audio2send = []
-    cur_data = ''  # current chunk  of audio data
-    rel = RATE/CHUNK
-    slid_win = deque(maxlen=SILENCE_LIMIT * rel)
-    #Prepend audio from 0.5 seconds before noise was detected
-    prev_audio = deque(maxlen=PREV_AUDIO * rel)
-    started = False
-    n = num_phrases
-    response = []
-
-    while (num_phrases == -1 or n > 0):
-        cur_data = stream.read(CHUNK)
-        slid_win.append(math.sqrt(abs(audioop.avg(cur_data, 4))))
-        #print slid_win[-1]
-        if(sum([x > THRESHOLD for x in slid_win]) > 0):
-            if(not started):
-                print ("Starting record of phrase")
-                started = True
-            audio2send.append(cur_data)
-        elif (started is True):
-            print ("Finished")
-            # The limit was reached, finish capture and deliver.
-            filename = save_speech(list(prev_audio) + audio2send, p)
-            # Send file to Google and get response
-            r = stt_google_wav(filename)
-            if num_phrases == -1:
-                print( "Response", r)
-            else:
-                response.append(r)
-            # Remove temp file. Comment line to review.
-            os.remove(filename)
-            # Reset all
-            started = False
-            slid_win = deque(maxlen=SILENCE_LIMIT * rel)
-            prev_audio = deque(maxlen=0.5 * rel)
-            audio2send = []
-            n -= 1
-            print ("Listening ...")
         else:
-            prev_audio.append(cur_data)
+            print(transcript + overwrite_chars)
 
-    print ("* Done recording")
-    stream.close()
-    p.terminate()
+            # Exit recognition if any of the transcribed phrases could be
+            # one of our keywords.
+            if re.search(r'\b(exit|quit)\b', transcript, re.I):
+                print('Exiting..')
+                break
 
-    return response
-
-
-def save_speech(data, p):
-    """ Saves mic data to temporary WAV file. Returns filename of saved
-        file """
-
-    filename = 'output_'+str(int(time.time()))
-    # writes data to WAV file
-    data = ''.join(data)
-    wf = wave.open(filename + '.wav', 'wb')
-    wf.setnchannels(1)
-    wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
-    wf.setframerate(16000)  # TODO make this value a function parameter?
-    wf.writeframes(data)
-    wf.close()
-    return filename + '.wav'
+            num_chars_printed = 0
 
 
-def stt_google_wav(audio_fname):
-    """ Sends audio file (audio_fname) to Google's text to speech
-        service and returns service's response. We need a FLAC
-        converter if audio is not FLAC (check FLAC_CONV). """
+def main():
+    # See http://g.co/cloud/speech/docs/languages
+    # for a list of supported languages.
+    language_code = 'en-US'  # a BCP-47 language tag
 
-    print ("Sending ", audio_fname)
-    #Convert to flac first
-    filename = audio_fname
-    del_flac = False
-    if 'flac' not in filename:
-        del_flac = True
-        print ("Converting to flac")
-        print (FLAC_CONV + filename)
-        os.system(FLAC_CONV + ' ' + filename)
-        filename = filename.split('.')[0] + '.flac'
+    client = speech.SpeechClient()
+    config = types.RecognitionConfig(
+        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=RATE,
+        language_code=language_code)
+    streaming_config = types.StreamingRecognitionConfig(
+        config=config,
+        interim_results=True)
 
-    f = open(filename, 'rb')
-    flac_cont = f.read()
-    f.close()
+    with MicrophoneStream(RATE, CHUNK) as stream:
+        audio_generator = stream.generator()
+        requests = (types.StreamingRecognizeRequest(audio_content=content)
+                    for content in audio_generator)
 
-    # Headers. A common Chromium (Linux) User-Agent
-    hrs = {"User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7",
-           'Content-type': 'audio/x-flac; rate=16000'}
+        responses = client.streaming_recognize(streaming_config, requests)
 
-    req = urllib2.Request(GOOGLE_SPEECH_URL, data=flac_cont, headers=hrs)
-    print ("Sending request to Google TTS")
-    #print "response", response
-    try:
-        p = urllib2.urlopen(req)
-        response = p.read()
-        res = eval(response)['hypotheses']
-    except:
-        print ("Couldn't parse service response")
-        res = None
-
-    if del_flac:
-        os.remove(filename)  # Remove temp file
-
-    return res
+        # Now, put the transcription responses to use.
+        listen_print_loop(responses)
 
 
-if(__name__ == '__main__'):
-    listen_for_speech()  # listen to mic.
-    #print stt_google_wav('hello.flac')  # translate audio file
+if __name__ == '__main__':
+    main()
