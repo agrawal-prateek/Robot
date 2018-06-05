@@ -58,7 +58,69 @@ def show_calender(query):
 
 
 def show_video(query):
-    pass
+    from apiclient.discovery import build
+    from apiclient.errors import HttpError
+    import cv2
+    import pytube
+
+    DEVELOPER_KEY = "AIzaSyAIUKy0S4IavWzn0OLjr6LciDHJzNzWlRw"
+    YOUTUBE_API_SERVICE_NAME = "youtube"
+    YOUTUBE_API_VERSION = "v3"
+
+    try:
+        youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
+                        developerKey=DEVELOPER_KEY)
+
+        search_response = youtube.search().list(
+            q=query,
+            part="id,snippet",
+            maxResults=1
+        ).execute()
+
+        videos = []
+        for search_result in search_response.get("items", []):
+            if search_result["id"]["kind"] == "youtube#video":
+                videos.append("%s (%s)" % (search_result["snippet"]["title"],
+                                           search_result["id"]["videoId"]))
+
+        # print ("Videos:\n", "\n".join(videos), "\n")
+        # print(videos[0])
+        print("Playing... ", "https://www.youtube.com/watch?v=",
+              list(videos[0].split())[-1][1:len(list(videos[0].split())[-1]) - 1], sep='')
+        link = "https://youtu.be/qLMpH6tpvBY"
+        yt = pytube.YouTube(link)
+        stream = yt.streams.first()
+        stream.download(tmpdir='/home/pi/Robot/src/temp/video.mp4')
+        cap = cv2.VideoCapture('video.mp4')
+        # Check if camera opened successfully
+        if not cap.isOpened():
+            print("Error opening video stream or file")
+
+        # Read until video is completed
+        while cap.isOpened():
+            # Capture frame-by-frame
+            ret, frame = cap.read()
+            if ret:
+
+                # Display the resulting frame
+                cv2.imshow('Frame', frame)
+
+                # Press Q on keyboard to  exit
+                if cv2.waitKey(25) & 0xFF == ord('q'):
+                    break
+
+            # Break the loop
+            else:
+                break
+
+        # When everything done, release the video capture object
+        cap.release()
+
+        # Closes all the frames
+        cv2.destroyAllWindows()
+    except HttpError as e:
+        print("error")
+        print("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
 
 
 def start_timer(query):

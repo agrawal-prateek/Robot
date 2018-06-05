@@ -1,2 +1,3 @@
 def shutdown():
-    pass
+    from os import system
+    system('shutdown now')

@@ -1,6 +1,21 @@
 def increase():
-    pass
+    import alsaaudio
+    from os import system
+    m = alsaaudio.Mixer('PCM')
+    if not m.getvolume() == 100:
+        m.setvolume(m.getvolume() + 10)
+        system("mpg123 /home/pi/Robot/src/audio/okayVolumeDecreased.mp3")
+    else:
+        system("mpg123 /home/pi/Robot/src/audio/volumeIsAlreadySetToFull.mp3")
 
 
 def decrease():
-    pass
+    import alsaaudio
+    from os import system
+    m = alsaaudio.Mixer('PCM')
+    if not m.getvolume() == 0:
+        m.setvolume(m.getvolume() - 10)
+        system("mpg123 /home/pi/Robot/src/audio/volumeIsAlreadySetToFull.mp3")
+    else:
+        system("mpg123 /home/pi/Robot/src/audio/volumeIsAlreadySetToMute.mp3")
+

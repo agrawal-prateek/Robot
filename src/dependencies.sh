@@ -9,6 +9,8 @@ sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
 sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
 python3 -m pip install --upgrade pip
 sudo apt-get install python3-tk python-tk
+sudo apt-get install python-alsaaudio
+
 
 tar -xvzf src/lib/google-cloud-sdk.tar.gz -C $HOME
 $HOME/google-cloud-sdk/install.sh
@@ -51,6 +53,6 @@ pip install --upgrade pyaudio
 pip install --upgrade google-api-python-client
 pip install --upgrade oauth2client
 pip install --upgrade SpeechRecognition
-pip install --upgrade twilio==6.14.3
+pip install --upgrade twilio
 pip install --upgrade google-cloud-vision
-
+pip install --upgrade pytube
