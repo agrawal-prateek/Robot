@@ -19,7 +19,15 @@ from google.assistant.embedded.v1alpha2 import (
 )
 from tenacity import retry, stop_after_attempt, retry_if_exception
 
+from src.actions import alarm
+from src.actions import call
+from src.actions import display
+from src.actions import restart
+from src.actions import send
+from src.actions import shutdown
+from src.actions import sound
 from src.actions import volume
+
 from src.grpc import assistant_helpers, audio_helpers, device_helpers
 
 ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
@@ -62,6 +70,7 @@ class SampleAssistant(object):
     @retry(reraise=True, stop=stop_after_attempt(3),
            retry=retry_if_exception(is_grpc_error_unavailable))
     def assist(self):
+
         device_actions_futures = []
         self.conversation_stream.start_recording()
         logging.info('Recording audio request.')
@@ -79,25 +88,224 @@ class SampleAssistant(object):
             if resp.event_type == END_OF_UTTERANCE:
                 logging.info('End of audio request detected')
                 self.conversation_stream.stop_recording()
-                # multiprocessing.Process(
-                #     target=get_assistant_transcript,
-                #     args=("linuxai-200815-linux-ai-znrszd", "a052c58c-3dac-11e8-9cf3-2c6e851f5f04",
-                #           assistant_query_and_response['query'])
-                # ).start()
             if resp.speech_results:
                 query = ' '.join(r.transcript for r in resp.speech_results)
+                query = query.lower()
             if len(resp.audio_out.audio_data) > 0:
                 print(query)
+                if query.find('ok') != -1:
+                    if not assistant_response:
 
-                self.conversation_stream.write(resp.audio_out.audio_data)
+                        # Send Email
+                        if re.search('(.*)send(.*)email(.*)', query):
+                            send.send_email(query)
+                            break
+
+                        # Send Message
+                        if re.search('(.*)send(.*)message(.*)', query):
+                            send.send_message(query)
+                            break
+
+                        # Shut Down
+                        elif re.search('(.*)shut down(.*)', query) \
+                                or re.search('(.*)turn off(.*)', query):
+                            shutdown.shutdown()
+                            break
+
+                        # Decrease Volume
+                        elif re.search('(.*)turn(.*)down(.*)volume(.*)', query) \
+                                or re.search('(.*)decrease(.*)volume(.*)', query) \
+                                or re.search('(.*)slow(.*)volume(.*)', query):
+                            volume.decrease()
+                            break
+
+                        # Increase Volume
+                        elif re.search('(.*)turn(.*)up(.*)volume(.*)', query) \
+                                or re.search('(.*)increase(.*)volume(.*)', query) \
+                                or re.search('(.*)high(.*)volume(.*)', query) \
+                                or re.search('(.*)speak(.*)loud(.*)', query):
+                            volume.increase()
+                            break
+
+                        # Tell me about This image
+                        elif re.search('(.*)tell(.*)this(.*)image(.*)', query) \
+                                or re.search('(.*)know(.*)this(.*)image(.*)', query) \
+                                or re.search('(.*)tell(.*)this(.*)picture(.*)', query) \
+                                or re.search('(.*)know(.*)this(.*)image(.*)', query):
+                            display.tell_about_image()
+                            break
+
+                        # Show Pictures
+                        elif re.search('(.*)show(.*)pictures(.*)', query):
+                            display.show_images(query)
+                            break
+
+                        # Show Calender
+                        elif re.search('(.*)show(.*)calender(.*)', query):
+                            display.show_calender(query)
+                            break
+
+                        # Show videos
+                        elif re.search('(.*)show(.*)trailer(.*)', query) \
+                                or re.search('(.*)show(.*)youtube(.*)', query) \
+                                or re.search('(.*)show(.*)video(.*)', query) \
+                                or re.search('(.*)show(.*)recipe(.*)', query) \
+                                or re.search('(.*)play(.*)video(.*)', query) \
+                                or re.search('(.*)play(.*)videos(.*)', query):
+                            display.show_video(query)
+                            break
+
+                        # Show Holiday
+                        elif re.search('(.*)show(.*)holiday(.*)', query) \
+                                or re.search('(.*)show(.*)holidays(.*)', query):
+                            display.show_holidays(query)
+                            break
+
+                        # Timer or Named Timer
+                        elif re.search('(.*)start(.*)timer(.*)', query) \
+                                or re.search('(.*)set(.*)timer(.*)', query):
+                            display.start_timer(query)
+                            break
+
+                        # Cancel Timer
+                        elif re.search('(.*)cancel(.*)timer(.*)', query) \
+                                or re.search('(.*)remove(.*)timer(.*)', query):
+                            display.cancel_timer(query)
+                            break
+
+                        # Music
+                        elif re.search('(.*)play(.*)music(.*)', query) \
+                                or re.search('(.*)play(.*)song(.*)', query) \
+                                or re.search('(.*)start(.*)music(.*)', query) \
+                                or re.search('(.*)start(.*)song(.*)', query):
+                            sound.play(query)
+                            break
+
+                        # Restart
+                        elif re.search('(.*)restart(.*)', query):
+                            restart.restart_task(query)
+                            break
+
+                        # Set Alarm
+                        elif re.search('(.*)set(.*)alarm(.*)', query) \
+                                or re.search('(.*)wake(.*)me(.*)', query):
+                            alarm.set_alarm(query)
+                            break
+
+                        # Cancel Alarm
+                        elif re.search('(.*)cancel(.*)alarm(.*)', query) \
+                                or re.search('(.*)remove(.*)alarm(.*)', query):
+                            alarm.cancel_alarm(query)
+                            break
+
+                        # Call
+                        elif re.search('(.*)make(.*)call(.*)', query):
+                            call.make_call(query)
+                            break
+
+                        # Abort Call
+                        elif re.search('(.*)hang(.*)up(.*)', query) \
+                                or re.search('(.*)abort(.*)call(.*)', query):
+                            call.abort_call(query)
+                            break
+
+                        # Get Price
+                        elif re.search('(.*)tell(.*)price(.*)', query):
+                            break
+
+                        # Throw/Roll a dice
+                        elif re.search('(.*)roll(.*)dice(.*)', query) \
+                                or re.search('(.*)throw(.*)dice(.*)', query):
+                            break
+
+                        # Flip a coin
+                        elif re.search('(.*)flip(.*)coin(.*)', query) \
+                                or re.search('(.*)throw(.*)coin(.*)', query):
+                            break
+
+                        # Random No.
+                        elif re.search('(.*)pick(.*)between(.*)', query) \
+                                or re.search('(.*)random(.*)between(.*)', query):
+                            break
+
+                        # Definition of a word
+                        elif re.search('(.*)what(.*)mean(.*)', query) \
+                                or re.search('(.*)how(.*)define(.*)', query):
+                            break
+
+                        # Spell a word
+                        elif re.search('(.*)how(.*)spell(.*)', query):
+                            break
+
+                        # Sports
+                        elif re.search('for sports', query):
+                            break
+
+                        # Send to tablet
+                        elif re.search('(.*)send(.*)my(.*)tablet(.*)', query) \
+                                or re.search('(.*)show(.*)my(.*)tablet(.*)', query) \
+                                or re.search('(.*)show(.*)my(.*)tab(.*)', query):
+                            break
+
+                        # Show current screen to other`s tablet
+                        elif re.search('(.*)show(.*)on(.*)tablet(.*)', query) \
+                                or re.search('(.*)show(.*)on(.*)tab(.*)', query):
+                            break
+
+                        # Lights ON/OFF
+                        elif re.search('(.*)(turn|switch)(.*)(on|off)(.*)', query):
+                            break
+
+                        # To Dim Lights/fan
+                        elif re.search('(.*)dim(.*)', query):
+                            break
+
+                        # Temperature
+                        elif re.search('(.*)set(.*)temperature(.*)', query) \
+                                or re.search('(.*)raise(.*)temperature(.*)', query):
+                            break
+
+                        # Door Lock
+                        elif re.search('(.*)lock(.*)door(.*)', query) \
+                                or re.search('(.*)lock(.*)gate(.*)', query):
+                            break
+
+                        # Discover/Find Devices
+                        elif re.search('(.*)discover(.*)device(.*)', query) \
+                                or re.search('(.*)find(.*)my(.*)device(.*)', query) \
+                                or re.search('(.*)where(.*)device(.*)', query):
+                            break
+
+                        # Bluetooth
+                        elif re.search('(.*)connect(.*)to(.*)', query) \
+                                or re.search('(.*)bluetooth(.*)', query):
+                            break
+
+                        # Switch Account
+                        elif re.search('(.*)switch(.*)account(.*)', query):
+                            break
+
+                        # Get Profile
+                        elif re.search('(.*)whose(.*)profile(.*)', query) \
+                                or re.search('(.*)who(.*)is(.*)this(.*)', query):
+                            break
+
+                        # GOOD Morning
+                        elif re.search('(.*)good(.*)morning(.*)', query):
+                            break
+
+                        # Tell a joke
+                        elif re.search('(.*)tell(.*)joke(.*)', query):
+                            break
+
+                        else:
+                            assistant_response = True
+                    if assistant_response:
+                        self.conversation_stream.write(resp.audio_out.audio_data)
             if resp.dialog_state_out.conversation_state:
                 conversation_state = resp.dialog_state_out.conversation_state
                 logging.debug('Updating conversation state.')
                 self.conversation_state = conversation_state
-            if resp.dialog_state_out.volume_percentage != 0:
-                volume_percentage = resp.dialog_state_out.volume_percentage
-                logging.info('Setting volume to %s%%', volume_percentage)
-                self.conversation_stream.volume_percentage = volume_percentage
             if resp.device_action.device_request_json:
                 device_request = json.loads(
                     resp.device_action.device_request_json
@@ -115,8 +323,6 @@ class SampleAssistant(object):
         return query
 
     def gen_assist_requests(self):
-        """Yields: AssistRequest messages to send to the API."""
-
         dialog_state_in = embedded_assistant_pb2.DialogStateIn(
             language_code=self.language_code,
             conversation_state=b''
@@ -157,8 +363,6 @@ def main():
     credentials = home_dir + '/Robot/src/credentials/google-oauthlib-tool/credentials.json'
     lang = 'en-US'
     verbose = False
-    input_audio_file = None
-    output_audio_file = None
     audio_sample_rate = audio_helpers.DEFAULT_AUDIO_SAMPLE_RATE
     audio_sample_width = audio_helpers.DEFAULT_AUDIO_SAMPLE_WIDTH
     audio_iter_size = audio_helpers.DEFAULT_AUDIO_ITER_SIZE
@@ -180,7 +384,7 @@ def main():
         logging.error('Error loading credentials: %s', e)
         logging.error('Run google-oauthlib-tool to initialize '
                       'new OAuth 2.0 credentials.')
-        sys.exit(-1)
+        os.system('mpg123 /home/pi/Robot/src/audio/networkNotFound.mp3')
 
     # Create an authorized gRPC channel.
     grpc_channel = google.auth.transport.grpc.secure_authorized_channel(
@@ -259,5 +463,6 @@ def main():
     with SampleAssistant(
             lang, device_model_id, device_id, conversation_stream, grpc_channel, grpc_deadline, device_handler
     ) as assistant:
+        os.system('mpg123 /home/pi/Robot/src/audio/ping.mp3')
         query = assistant.assist()
         return str(query)

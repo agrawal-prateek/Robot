@@ -4,12 +4,12 @@ HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
 
 # Install Packages
 sudo apt-get update
+sudo apt-get install -y python-pip
 sudo apt-get install -y python3-dev python3-venv
-sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
-sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
-python3 -m pip install --upgrade pip
-sudo apt-get install python3-tk python-tk
-sudo apt-get install python-alsaaudio
+sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev python-all-dev python3-all-dev
+sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
+sudo apt-get install -y python3-tk python-tk
+sudo apt-get install -y python-alsaaudio
 
 
 tar -xvzf src/lib/google-cloud-sdk.tar.gz -C $HOME
@@ -56,4 +56,4 @@ pip install --upgrade SpeechRecognition
 pip install --upgrade twilio
 pip install --upgrade google-cloud-vision
 pip install --upgrade pytube
-pip install --upgrade alsaaudio
+pip install --upgrade pyalsaaudio
