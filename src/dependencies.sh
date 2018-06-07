@@ -56,3 +56,4 @@ pip install --upgrade SpeechRecognition
 pip install --upgrade twilio
 pip install --upgrade google-cloud-vision
 pip install --upgrade pytube
+pip install --upgrade alsaaudio

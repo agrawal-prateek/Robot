@@ -4,6 +4,7 @@ import logging
 import multiprocessing
 import os
 import os.path
+import re
 import sys
 import uuid
 
@@ -17,6 +18,8 @@ from google.assistant.embedded.v1alpha2 import (
     embedded_assistant_pb2_grpc
 )
 from tenacity import retry, stop_after_attempt, retry_if_exception
+
+from src.actions import volume
 from src.grpc import assistant_helpers, audio_helpers, device_helpers
 
 ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
@@ -25,7 +28,7 @@ DIALOG_FOLLOW_ON = embedded_assistant_pb2.DialogStateOut.DIALOG_FOLLOW_ON
 CLOSE_MICROPHONE = embedded_assistant_pb2.DialogStateOut.CLOSE_MICROPHONE
 DEFAULT_GRPC_DEADLINE = 60 * 3 + 5
 assistant_query_and_response = multiprocessing.Manager().dict()
-home_dir=os.path.expanduser('~')
+home_dir = os.path.expanduser('~')
 
 
 class SampleAssistant(object):
@@ -70,6 +73,7 @@ class SampleAssistant(object):
             self.conversation_stream.start_playback()
 
         query = None
+        assistant_response = False
         for resp in self.assistant.Assist(iter_assist_requests(), self.deadline):
             assistant_helpers.log_assist_response_without_audio(resp)
             if resp.event_type == END_OF_UTTERANCE:
@@ -83,7 +87,8 @@ class SampleAssistant(object):
             if resp.speech_results:
                 query = ' '.join(r.transcript for r in resp.speech_results)
             if len(resp.audio_out.audio_data) > 0:
-                pass
+                print(query)
+
                 self.conversation_stream.write(resp.audio_out.audio_data)
             if resp.dialog_state_out.conversation_state:
                 conversation_state = resp.dialog_state_out.conversation_state
@@ -148,8 +153,8 @@ def main():
     project_id = 'linux-ai'
     device_model_id = 'linuxai-200815-linux-ai-znrszd'
     device_id = 'a052c58c-3dac-11e8-9cf3-2c6e851f5f04'
-    device_config = home_dir+'/Robot/src/credentials/googlesamples-assistant/device_config.json'
-    credentials = home_dir+'/Robot/src/credentials/google-oauthlib-tool/credentials.json'
+    device_config = home_dir + '/Robot/src/credentials/googlesamples-assistant/device_config.json'
+    credentials = home_dir + '/Robot/src/credentials/google-oauthlib-tool/credentials.json'
     lang = 'en-US'
     verbose = False
     input_audio_file = None

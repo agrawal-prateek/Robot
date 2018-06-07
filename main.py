@@ -39,11 +39,11 @@ while True:
         volume.decrease()
 
     # Increase Volume
-    elif re.search('(.*)turn(.*)up(.*)volume(.*)', query) \
-            or re.search('(.*)increase(.*)volume(.*)', query) \
-            or re.search('(.*)high(.*)volume(.*)', query) \
-            or re.search('(.*)speak(.*)loud(.*)', query):
-        volume.increase()
+    # elif re.search('(.*)turn(.*)up(.*)volume(.*)', query) \
+    #         or re.search('(.*)increase(.*)volume(.*)', query) \
+    #         or re.search('(.*)high(.*)volume(.*)', query) \
+    #         or re.search('(.*)speak(.*)loud(.*)', query):
+    #     volume.increase()
 
     # Tell me about This image
     elif re.search('(.*)tell(.*)this(.*)image(.*)', query) \
