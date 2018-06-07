@@ -83,6 +83,7 @@ class SampleAssistant(object):
             if resp.speech_results:
                 query = ' '.join(r.transcript for r in resp.speech_results)
             if len(resp.audio_out.audio_data) > 0:
+                pass
                 self.conversation_stream.write(resp.audio_out.audio_data)
             if resp.dialog_state_out.conversation_state:
                 conversation_state = resp.dialog_state_out.conversation_state
