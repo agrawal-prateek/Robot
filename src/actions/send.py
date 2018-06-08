@@ -9,6 +9,9 @@ from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file
 from src.auth import gmail
+from src.actions import getpeoples
+from src.actions import speech_to_text
+from twilio.rest import TwilioRestClient,Client
 
 home_dir = os.path.expanduser('~')
 root = None
@@ -46,9 +49,31 @@ def sendmail():
 
 
 def send_message(query):
-    print('haha')
+    persons = getpeoples.get_peoples()
+    print(persons)
+    os.system('mpg123 /home/pi/Robot/src/audio/pleaseTellMeTheNameOfThePersonToWhomYouWantToSendMessage.mp3')
+    personname = speech_to_text.get_user_input().lower()
+    personphone = None
+    for person in persons:
+        if person['name'].find(personname) != -1:
+            personphone = person['phone']
+            break
+    if not personphone:
+        os.system('mpg123 /home/pi/Robot/src/audio/sorryICouldntFindThePersonToWhomYouWantToSendTheMessage.mp3')
+        return
+    os.system('mpg123 /home/pi/Robot/src/audio/whatsYourMessage.mp3')
+    messagetext = speech_to_text.get_user_input()
+    client = Client("AC2bb615af88faf946ecb4d1e3c013771e", "74cf75c65a2a39660f6401fbc58aa563")
+
+    message = client.messages.create(
+        body=messagetext,
+        from_='+17738255252',
+        to=personphone
+    )
+
+    print(message.sid)
+    os.system('mpg123 /home/pi/Robot/src/audio/messagesentsuccessfully.mp3')
 
 
 def send_email(query):
     pass
-

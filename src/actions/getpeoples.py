@@ -12,13 +12,18 @@ def get_peoples():
     results = service.people().connections().list(resourceName='people/me',
                                                   personFields='names,emailAddresses,phoneNumbers').execute()
     connections = results.get('connections', [])
-    peoples = dict()
+    peoples = []
 
     for person in connections:
         try:
             name = person['names'][0].get('displayName')
             phone = person['phoneNumbers'][0]['canonicalForm']
-            peoples[name] = phone
+            peoples.append(
+                {
+                    'name': name.lower(),
+                    'phone': phone
+                }
+            )
         except KeyError:
             pass
     return peoples

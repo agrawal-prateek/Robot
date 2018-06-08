@@ -1,3 +1,8 @@
+from tkinter import *
+from time import sleep
+from os import system
+
+
 def tell_about_image():
     import io
 
@@ -124,7 +129,59 @@ def show_video(query):
 
 
 def start_timer(query):
-    pass
+    class Timer:
+        def __init__(self, hour, minute, sec):
+            self.root = Tk()
+            self.hour = hour
+            self.minute = minute
+            self.sec = sec
+            self.main_hour = hour
+            self.main_minute = minute
+            self.main_sec = sec
+            self.root.attributes('-fullscreen', True)
+            self.root.bind('<Escape>', exit)
+            self.frame = Frame(self.root)
+            self.time = Label(
+                self.frame,
+                text=str(self.hour) + ' : ' + str(self.minute) + ' : ' + str(self.sec),
+                font=('Helvetica', 88)
+            )
+            self.frame.pack(expand=True)
+            self.time.pack()
+            self.start_timer()
+
+        def update_time(self):
+            self.sec -= 1
+            if self.sec < 0:
+                self.sec = 59
+                self.minute -= 1
+            if self.minute < 0:
+                self.hour -= 1
+                self.minute = 59
+            self.time['text'] = str(self.hour) + ' : ' + str(self.minute) + ' : ' + str(self.sec)
+            self.time.update()
+
+        def alarm(self):
+            system(
+                "/home/pi/Robot/src/speaktext.sh '"
+                + str(self.main_hour) + " hour "
+                + str(self.main_minute) + " minute "
+                + str(self.main_sec) + " second "
+                + 'has been finished!'
+                  "'"
+            )
+
+        def run_timer(self):
+            while True:
+                self.update_time()
+                if self.hour == 0 and self.minute == 0 and self.sec == 0:
+                    self.alarm()
+                    self.root.destroy()
+                sleep(0.99)
+
+        def start_timer(self):
+            self.root.after(1000, self.run_timer)
+            self.root.mainloop()
 
 
 def cancel_timer(query):

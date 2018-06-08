@@ -34,7 +34,7 @@ ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
 END_OF_UTTERANCE = embedded_assistant_pb2.AssistResponse.END_OF_UTTERANCE
 DIALOG_FOLLOW_ON = embedded_assistant_pb2.DialogStateOut.DIALOG_FOLLOW_ON
 CLOSE_MICROPHONE = embedded_assistant_pb2.DialogStateOut.CLOSE_MICROPHONE
-DEFAULT_GRPC_DEADLINE = 60 * 3 + 5
+DEFAULT_GRPC_DEADLINE = 185
 assistant_query_and_response = multiprocessing.Manager().dict()
 home_dir = os.path.expanduser('~')
 
@@ -93,7 +93,7 @@ class SampleAssistant(object):
                 query = query.lower()
             if len(resp.audio_out.audio_data) > 0:
                 print(query)
-                if query.find('ok') != -1:
+                if query.find('') != -1:
                     if not assistant_response:
 
                         # Send Email
@@ -102,7 +102,8 @@ class SampleAssistant(object):
                             break
 
                         # Send Message
-                        if re.search('(.*)send(.*)message(.*)', query):
+                        if re.search('(.*)send(.*)message(.*)', query) \
+                                or re.search('(.*)cancel(.*)message(.*)', query):
                             send.send_message(query)
                             break
 
@@ -346,11 +347,8 @@ class SampleAssistant(object):
                 device_model_id=self.device_model_id,
             )
         )
-        # The first AssistRequest must contain the AssistConfig
-        # and no audio data.
         yield embedded_assistant_pb2.AssistRequest(config=config)
         for data in self.conversation_stream:
-            # Subsequent requests need audio data, but not config.
             yield embedded_assistant_pb2.AssistRequest(audio_in=data)
 
 
@@ -464,5 +462,12 @@ def main():
             lang, device_model_id, device_id, conversation_stream, grpc_channel, grpc_deadline, device_handler
     ) as assistant:
         os.system('mpg123 /home/pi/Robot/src/audio/ping.mp3')
-        query = assistant.assist()
-        return str(query)
+        assistant.assist()
+
+
+def start_robot():
+    while True:
+        try:
+            main()
+        except Exception as e:
+            print(e)
