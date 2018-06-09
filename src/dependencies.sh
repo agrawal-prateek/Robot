@@ -58,3 +58,4 @@ pip install --upgrade twilio==6.14.4
 pip install --upgrade google-cloud-vision
 pip install --upgrade pytube
 pip install --upgrade pyalsaaudio
+pip install --upgrade google-cloud-language==1.0.2

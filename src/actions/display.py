@@ -1,6 +1,7 @@
 from tkinter import *
 from time import sleep
 from os import system
+from src.actions import nlp
 
 
 def tell_about_image():
@@ -182,6 +183,32 @@ def start_timer(query):
         def start_timer(self):
             self.root.after(1000, self.run_timer)
             self.root.mainloop()
+
+    h = 0
+    m = 0
+    s = 0
+    h_m_s = []
+    data = nlp.get_parts_of_speech(query)
+    for part in data:
+        if part['parts_of_speech'] == 'NUM':
+            h_m_s.append(part['token'])
+        elif part['parts_of_speech'] == 'NOUN':
+            if part['token'] == 'seconds' or \
+                    part['token'] == 'second' or \
+                    part['token'] == 'hour' or \
+                    part['token'] == 'hours' or \
+                    part['token'] == 'minutes' or \
+                    part['token'] == 'minute':
+                h_m_s.append(part['token'])
+    for i in range(1, len(h_m_s)):
+        if h_m_s[i] == 'second' or h_m_s[i] == 'seconds':
+            s = int(h_m_s[i - 1])
+        if h_m_s[i] == 'minute' or h_m_s[i] == 'minutes':
+            m = int(h_m_s[i - 1])
+        if h_m_s[i] == 'hour' or h_m_s[i] == 'hours':
+            h = int(h_m_s[i - 1])
+
+    Timer(hour=h, minute=m, sec=s)
 
 
 def cancel_timer(query):
