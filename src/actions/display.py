@@ -163,14 +163,15 @@ def start_timer(query):
             self.time.update()
 
         def alarm(self):
-            system(
-                "/home/pi/Robot/src/speaktext.sh '"
-                + str(self.main_hour) + " hour "
-                + str(self.main_minute) + " minute "
-                + str(self.main_sec) + " second "
-                + 'has been finished!'
-                  "'"
-            )
+            text = "/home/pi/Robot/src/speaktext.sh '"
+            if self.main_hour != 0:
+                text += str(self.main_hour) + " hour "
+            if self.main_minute != 0:
+                text += str(self.main_minute) + " minute "
+            if self.main_sec != 0:
+                text += str(self.main_sec) + " second "
+            text += "has been finished!'"
+            system(text)
 
         def run_timer(self):
             while True:
@@ -207,7 +208,9 @@ def start_timer(query):
             m = int(h_m_s[i - 1])
         if h_m_s[i] == 'hour' or h_m_s[i] == 'hours':
             h = int(h_m_s[i - 1])
-
+    if not h and not s and not m:
+        system('mpg123 /home/pi/Robot/src/audio/pleaseTellMeTheDurationOfTime.mp3')
+        return
     Timer(hour=h, minute=m, sec=s)
 
 

@@ -5,13 +5,15 @@ import os
 import time
 from email.mime.text import MIMEText
 from tkinter import *
+from src.actions import getemails
+
 from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file
-from src.auth import gmail
+from twilio.rest import Client
+
 from src.actions import getpeoples
 from src.actions import speech_to_text
-from twilio.rest import TwilioRestClient,Client
 
 home_dir = os.path.expanduser('~')
 root = None
@@ -76,4 +78,6 @@ def send_message(query):
 
 
 def send_email(query):
+    # emails = getemails.get_emails(max_results=100)
+    # print(emails)
     pass
