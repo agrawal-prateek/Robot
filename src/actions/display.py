@@ -47,12 +47,8 @@ def tell_about_image():
     if output_text:
         os.system("/home/pi/Robot/src/speaktext.sh '" + output_text + "'")
     else:
-        os.system(
-            "/home/pi/Robot/src/speaktext.sh "
-            "'Sorry, we could not analyse this image."
-            " Please try with different position and angles."
-            " Or you could try with more lightning. Thank you'"
-        )
+        os.system('mpg123 /home/pi/Robot/src/audio/Sorry we could not analyse this image  Please try with different '
+                  'position and angles Or you could try with more lightningThank you.mp3')
 
 
 def show_images(query):
