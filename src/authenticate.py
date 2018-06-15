@@ -17,14 +17,13 @@ def authenticate_gmail():
         'https://www.googleapis.com/auth/gmail.insert',
         'https://www.googleapis.com/auth/gmail.labels',
         'https://www.googleapis.com/auth/gmail.modify',
-        'https://www.googleapis.com/auth/gmail.metadata',
         'https://www.googleapis.com/auth/gmail.settings.basic',
         'https://www.googleapis.com/auth/gmail.settings.sharing',
         'https://mail.google.com/'
     ]
     if not os.path.exists(home_dir + '/Robot/src/credentials/authenticated/gmail'):
         os.mkdir(home_dir + '/Robot/src/credentials/authenticated/gmail')
-    store = file.Storage(os.path.join('src/credentials/authenticated/gmail', 'credentials.json'))
+    store = file.Storage(os.path.join('/home/pi/Robot/src/credentials/authenticated/gmail', 'credentials.json'))
     creds = store.get()
     if not creds or creds.invalid:
         flow = client.flow_from_clientsecrets(home_dir + '/Robot/src/credentials/auth2/client_secret.json',
@@ -55,4 +54,3 @@ def authenticate_photos():
                                               SCOPES)
         creds = tools.run_flow(flow, store)
     service = build('photos', 'v1', http=creds.authorize(Http()))
-authenticate_photos()

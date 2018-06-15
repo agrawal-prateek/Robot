@@ -2,10 +2,8 @@ from __future__ import print_function
 
 import base64
 import os
-import time
+import re
 from email.mime.text import MIMEText
-from tkinter import *
-from src.actions import getemails
 
 from apiclient.discovery import build
 from httplib2 import Http
@@ -15,44 +13,28 @@ from twilio.rest import Client
 from src.actions import getpeoples
 from src.actions import speech_to_text
 
-home_dir = os.path.expanduser('~')
-root = None
-e1, e2, e3, e4, errormessage = None, None, None, None, None
 
-
-def destroy(*args):
-    global root
-    root.destroy()
-
-
-def sendmail():
-    global e1, e2, e3, e4, errormessage
+def sendmail(to_address, subject, email_text):
+    from_address = 'prateekagrawal89760@gmail.com'
     try:
-        store = file.Storage(home_dir + '/Robot/src/credentials/authenticated/gmail/credentials.json')
+        store = file.Storage('/home/pi/Robot/src/credentials/authenticated/gmail/credentials.json')
         creds = store.get()
         service = build('gmail', 'v1', http=creds.authorize(Http()))
 
-        message = MIMEText(e4.get("1.0", END))
-        message['to'] = e2.get()
-        message['from'] = e1.get()
-        message['subject'] = e3.get()
+        message = MIMEText(email_text)
+        message['to'] = to_address
+        message['from'] = from_address
+        message['subject'] = subject
         create_message = {'raw': base64.urlsafe_b64encode(message.as_string().encode('utf-8')).decode('utf-8')}
 
         sendmessage = (service.users().messages().send(userId="me", body=create_message).execute())
         print('Message Id: %s' % sendmessage['id'])
-        errormessage.config(fg='green')
-        errormessage['text'] = 'Message sent Successfully!'
-        time.sleep(2)
-        destroy()
     except Exception as e:
         print(e)
-        errormessage.config(fg='red')
-        errormessage['text'] = 'Sorry, Message could not sent! Please check your details'
 
 
-def send_message(query):
+def send_message():
     persons = getpeoples.get_peoples()
-    print(persons)
     os.system('mpg123 /home/pi/Robot/src/audio/pleaseTellMeTheNameOfThePersonToWhomYouWantToSendMessage.mp3')
     personname = speech_to_text.get_user_input().lower()
     personphone = None
@@ -77,7 +59,28 @@ def send_message(query):
     os.system('mpg123 /home/pi/Robot/src/audio/messagesentsuccessfully.mp3')
 
 
-def send_email(query):
-    # emails = getemails.get_emails(max_results=100)
-    # print(emails)
-    pass
+def send_email():
+    os.system("mpg123 /home/pi/Robot/src/audio/telltheemailoftheperson.mp3")
+    while True:
+        initial_email = speech_to_text.get_user_input()
+        if not re.search('(.+)@(.+).(.+)', initial_email):
+            os.system('mpg123 /home/pi/Robot/src/audio/pleasetellthevalidemail.mp3')
+        else:
+            break
+    email = ''
+    for i in initial_email:
+        if i != ' ':
+            email += i
+
+    os.system('mpg123 /home/pi/Robot/src/audio/whatsYourMessage.mp3')
+    message = speech_to_text.get_user_input()
+
+    os.system('mpg123 /home/pi/Robot/src/audio/tellTheSubject.mp3')
+    subject = speech_to_text.get_user_input()
+
+    sendmail(
+        to_address=email,
+        subject=subject,
+        email_text=message
+    )
+    os.system('mpg123 /home/pi/Robot/src/audio/emailSentSuccessfully.mp3')

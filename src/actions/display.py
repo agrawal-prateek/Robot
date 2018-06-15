@@ -1,28 +1,25 @@
-from tkinter import *
-from time import sleep
+import io
+import os
+import multiprocessing
 from os import system
+from time import sleep
+from tkinter import *
+from src.actions import show_image
+import google.cloud.vision
+
 from src.actions import nlp
 
 
 def tell_about_image():
-    import io
-
-    import google.cloud.vision
-    import os
-
     try:
-        os.remove('/home/pi/data/images/temp.jpg')
+        os.remove('/home/pi/temp.jpg')
     except Exception as e:
         print(e)
 
-    if not os.path.exists('/home/pi/data'):
-        os.mkdir('/home/pi/data')
-        os.mkdir('/home/pi/data/images')
-    elif not os.path.exists('/home/pi/data/images'):
-        os.mkdir('/home/pi/data/images')
-
-    os.system('raspistill -o /home/pi/data/images/temp.jpg')
-    image_file_name = '/home/pi/data/images/temp.jpg'
+    os.system('raspistill -o /home/pi/temp.jpg')
+    progressbar_process = multiprocessing.Process(target=show_image.show_progressbar)
+    progressbar_process.start()
+    image_file_name = '/home/pi/temp.jpg'
 
     vision_client = google.cloud.vision.ImageAnnotatorClient()
     with io.open(image_file_name, 'rb') as image_file:
@@ -44,11 +41,14 @@ def tell_about_image():
         output_text += ' ' + webs.web_detection.web_entities[0].description
         output_text += ' ' + webs.web_detection.best_guess_labels[0].label
 
+    progressbar_process.terminate()
     if output_text:
         os.system("/home/pi/Robot/src/speaktext.sh '" + output_text + "'")
     else:
-        os.system('mpg123 /home/pi/Robot/src/audio/Sorry we could not analyse this image  Please try with different '
-                  'position and angles Or you could try with more lightningThank you.mp3')
+        os.system('mpg123 '
+                  '/home/pi/Robot/src/audio/'
+                  'SorrywecouldnotanalysethisimagePleasetrywithdifferentpositionandangles'
+                  'OryoucouldtrywithmorelightningThankyou.mp3')
 
 
 def show_images(query):

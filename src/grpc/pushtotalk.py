@@ -95,16 +95,15 @@ class SampleAssistant(object):
                 print(query)
                 if query.find('') != -1:
                     if not assistant_response:
-
                         # Send Email
                         if re.search('(.*)send(.*)email(.*)', query):
-                            send.send_email(query)
+                            send.send_email()
                             break
 
                         # Send Message
                         if re.search('(.*)send(.*)message(.*)', query) \
                                 or re.search('(.*)cancel(.*)message(.*)', query):
-                            send.send_message(query)
+                            send.send_message()
                             break
 
                         # Shut Down
