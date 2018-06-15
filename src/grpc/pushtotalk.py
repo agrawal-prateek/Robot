@@ -37,6 +37,7 @@ CLOSE_MICROPHONE = embedded_assistant_pb2.DialogStateOut.CLOSE_MICROPHONE
 DEFAULT_GRPC_DEADLINE = 185
 assistant_query_and_response = multiprocessing.Manager().dict()
 home_dir = os.path.expanduser('~')
+started_timer = None
 
 
 class SampleAssistant(object):
@@ -70,7 +71,7 @@ class SampleAssistant(object):
     @retry(reraise=True, stop=stop_after_attempt(3),
            retry=retry_if_exception(is_grpc_error_unavailable))
     def assist(self):
-
+        global started_timer
         device_actions_futures = []
         self.conversation_stream.start_recording()
         logging.info('Recording audio request.')
@@ -164,13 +165,16 @@ class SampleAssistant(object):
                         # Timer or Named Timer
                         elif re.search('(.*)start(.*)timer(.*)', query) \
                                 or re.search('(.*)set(.*)timer(.*)', query):
-                            display.start_timer(query)
+                            started_timer = multiprocessing.Process(target=display.start_timer, args=(query,))
+                            started_timer.start()
                             break
 
                         # Cancel Timer
                         elif re.search('(.*)cancel(.*)timer(.*)', query) \
                                 or re.search('(.*)remove(.*)timer(.*)', query):
-                            display.cancel_timer(query)
+                            if started_timer:
+                                started_timer.terminate()
+                                started_timer = None
                             break
 
                         # Music
