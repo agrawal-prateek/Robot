@@ -4,9 +4,10 @@ import logging
 import multiprocessing
 import os
 import os.path
-import re
-import sys
 import uuid
+from tkinter import *
+import subprocess
+import time
 
 import google.auth.transport.grpc
 import google.auth.transport.requests
@@ -27,7 +28,6 @@ from src.actions import send
 from src.actions import shutdown
 from src.actions import sound
 from src.actions import volume
-
 from src.grpc import assistant_helpers, audio_helpers, device_helpers
 
 ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
@@ -38,6 +38,10 @@ DEFAULT_GRPC_DEADLINE = 185
 assistant_query_and_response = multiprocessing.Manager().dict()
 home_dir = os.path.expanduser('~')
 started_timer = None
+
+
+def start_timer(query):
+    os.system('python /home/pi/Robot/parallelProcesses/start_timer.py "' + query + '"')
 
 
 class SampleAssistant(object):
@@ -165,7 +169,7 @@ class SampleAssistant(object):
                         # Timer or Named Timer
                         elif re.search('(.*)start(.*)timer(.*)', query) \
                                 or re.search('(.*)set(.*)timer(.*)', query):
-                            started_timer = multiprocessing.Process(target=display.start_timer, args=(query,))
+                            started_timer = multiprocessing.Process(target=start_timer, args=(query,))
                             started_timer.start()
                             break
 

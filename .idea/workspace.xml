@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a912a7de-ccbd-46b9-9b33-b444f3a112d5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/temp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parallelProcesses/start_timer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/display.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grpc/pushtotalk.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/grpc/pushtotalk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/temp/synthesizedaudio.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/temp/synthesizedaudio.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/temp/synthesizeoutput.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/linuxAI$devicetool.coverage" NAME="devicetool Coverage Results" MODIFIED="1517762767603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
     <SUITE FILE_PATH="coverage/Robot$temp2.coverage" NAME="temp2 Coverage Results" MODIFIED="1528281337072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Robot$main.coverage" NAME="main Coverage Results" MODIFIED="1528636926003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Robot$main.coverage" NAME="main Coverage Results" MODIFIED="1529071170273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/linuxAI$audio_helpers.coverage" NAME="audio_helpers Coverage Results" MODIFIED="1517834773443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/assistantlib" />
     <SUITE FILE_PATH="coverage/Robot$getpeoples.coverage" NAME="getpeoples Coverage Results" MODIFIED="1528530982424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/actions" />
     <SUITE FILE_PATH="coverage/Robot$temp__1_.coverage" NAME="temp (1) Coverage Results" MODIFIED="1528613972136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -38,7 +42,7 @@
     <SUITE FILE_PATH="coverage/linuxAI$test.coverage" NAME="test Coverage Results" MODIFIED="1524498879638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Robot$email.coverage" NAME="email Coverage Results" MODIFIED="1528367532836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/actions" />
     <SUITE FILE_PATH="coverage/Robot$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1528454585615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Robot$temp.coverage" NAME="temp Coverage Results" MODIFIED="1529066008230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Robot$temp.coverage" NAME="temp Coverage Results" MODIFIED="1529071153703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -60,30 +64,10 @@
       <file leaf-file-name="pushtotalk.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/grpc/pushtotalk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="173" column="66" selection-start-line="173" selection-start-column="66" selection-end-line="173" selection-end-column="66" />
+            <state relative-caret-position="214">
+              <caret line="320" column="50" selection-start-line="320" selection-start-column="50" selection-end-line="320" selection-end-column="50" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#3533#3589#0" />
-                <element signature="e#3813#3866#0" />
-                <element signature="e#4074#4127#0" />
-                <element signature="e#4444#4495#0" />
-                <element signature="e#4889#4940#0" />
-                <element signature="e#5364#5424#0" />
-                <element signature="e#6377#6436#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="display.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/display.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#3781#6743#0" />
               </folding>
             </state>
           </provider>
@@ -110,7 +94,6 @@
       <find>main</find>
       <find>assist</find>
       <find>retu</find>
-      <find>print</find>
       <find>src</find>
       <find>linuxAI</find>
       <find>.linuxAI/linuxAI</find>
@@ -124,6 +107,9 @@
       <find>utk</find>
       <find>youtube</find>
       <find>500</find>
+      <find>start</find>
+      <find>prin</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>Robot</replace>
@@ -138,9 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/credentials/registerdevice/credentials.json" />
-        <option value="$PROJECT_DIR$/client_secret_952663562026-5eeu4c9am3ovdod42rtb5otp20bk2mv2.apps.googleusercontent.com.json" />
-        <option value="$PROJECT_DIR$/src/authenticate.sh" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/src/getquery.py" />
         <option value="$PROJECT_DIR$/src/runsample.sh" />
@@ -186,8 +169,11 @@
         <option value="$PROJECT_DIR$/src/actions/send.py" />
         <option value="$PROJECT_DIR$/src/progressbar.py" />
         <option value="$PROJECT_DIR$/src/actions/show_image.py" />
-        <option value="$PROJECT_DIR$/src/actions/display.py" />
         <option value="$PROJECT_DIR$/temp.py" />
+        <option value="$PROJECT_DIR$/subprocess/start_timer.py" />
+        <option value="$PROJECT_DIR$/parallelProcesses/__init__.py" />
+        <option value="$PROJECT_DIR$/src/actions/display.py" />
+        <option value="$PROJECT_DIR$/parallelProcesses/start_timer.py" />
         <option value="$PROJECT_DIR$/src/grpc/pushtotalk.py" />
       </list>
     </option>
@@ -227,6 +213,12 @@
               <item name="Robot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Robot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Robot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -240,18 +232,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/static/images" />
-      <recent name="$PROJECT_DIR$/src/audio" />
-      <recent name="$PROJECT_DIR$/src/actions" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/static/images" />
       <recent name="$PROJECT_DIR$/src/auth" />
       <recent name="$PROJECT_DIR$/src/audio" />
       <recent name="$PROJECT_DIR$/src/static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/subprocess" />
+      <recent name="$PROJECT_DIR$/src/static/images" />
+      <recent name="$PROJECT_DIR$/src/audio" />
+      <recent name="$PROJECT_DIR$/src/actions" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -267,26 +259,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.temp">
-    <configuration name="authenticate" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Robot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/authenticate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.main">
     <configuration name="getemails" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Robot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -301,6 +274,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/actions/getemails.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Robot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -357,26 +349,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/subprocess/start_timer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.authenticate" />
       <item itemvalue="Python.sync_emails" />
       <item itemvalue="Python.getemails" />
       <item itemvalue="Python.temp" />
       <item itemvalue="Python.show_image" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.temp" />
         <item itemvalue="Python.show_image" />
         <item itemvalue="Python.getemails" />
         <item itemvalue="Python.sync_emails" />
-        <item itemvalue="Python.authenticate" />
       </list>
     </recent_temporary>
   </component>
@@ -636,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529064143520</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Commited from Pycharm">
+      <created>1529070621386</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1529070621386</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -658,14 +657,14 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3277311" />
       <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.4788401" weight="0.32941177" />
       <window_info anchor="bottom" x="0" y="271" width="1366" height="208" id="Run" order="14" sideWeight="0.52507836" weight="0.3226891" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.5054859" visible="true" weight="0.2621849" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9314775" visible="true" weight="0.13949843" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5054859" visible="true" weight="0.2554622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9314775" visible="true" weight="0.13949843" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info id="Database" order="2" weight="0.0" />
       <window_info id="SciView" order="3" weight="0.3296131" />
       <window_info id="Structure" order="1" show_stripe_button="false" sideWeight="0.06852248" side_tool="true" weight="0.1716301" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.3299373" />
-      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.4992163" weight="0.39831933" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.4992163" weight="0.0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -679,31 +678,31 @@
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" visible="true" weight="0.32885906" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4992163" weight="0.3277311" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9314775" visible="true" weight="0.13949843" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3277311" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="SciView" order="3" weight="0.3296131" />
+      <window_info active="true" anchor="bottom" x="0" y="271" width="1366" height="208" id="Run" order="14" sideWeight="0.52507836" visible="true" weight="0.25210086" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info id="Favorites" order="4" side_tool="true" weight="0.3299373" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9314775" visible="true" weight="0.13949843" />
       <window_info id="Structure" order="1" show_stripe_button="false" sideWeight="0.06852248" side_tool="true" weight="0.1716301" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32941177" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" x="0" y="271" width="1366" height="208" id="Run" order="14" sideWeight="0.52507836" visible="true" weight="0.25210086" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32885906" />
-      <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.4788401" weight="0.32941177" />
-      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.4992163" weight="0.39831933" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4992163" weight="0.3277311" />
       <window_info anchor="right" x="0" y="0" width="274" height="543" id="Documentation" order="3" side_tool="true" weight="0.32948422" />
-      <window_info id="Database" order="2" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.4992163" weight="0.39831933" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5054859" weight="0.2621849" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.47492164" side_tool="true" weight="0.3579832" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3277311" />
+      <window_info id="SciView" order="3" weight="0.3296131" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.44984326" weight="0.27226892" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="4" side_tool="true" weight="0.3299373" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="12" visible="true" weight="0.32885906" />
+      <window_info id="Database" order="2" weight="0.0" />
+      <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.4788401" weight="0.32941177" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,19 +721,10 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/linuxAI.desktop" />
-    <entry file="file://$PROJECT_DIR$/linuxAI.desktop" />
-    <entry file="file://$PROJECT_DIR$/src/uninstall.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/alarm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -806,9 +796,6 @@
     <entry file="file://$PROJECT_DIR$/src/actions/shutdown.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/sound.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/volume.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -878,17 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-112">
           <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#614#1374#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -916,16 +892,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/nlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/progressbar.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/progressbar.py" />
     <entry file="file://$PROJECT_DIR$/src/actions/show_image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -943,16 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="95" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="95" />
-          <folding>
-            <element signature="e#799#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.6/re.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -960,30 +917,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/multiprocessing/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parallelProcesses/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        <state relative-caret-position="278">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#3781#6743#0" />
+            <element signature="e#231#1717#0" />
+            <element signature="e#1819#3981#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parallelProcesses/start_timer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/sound.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/grpc/pushtotalk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="173" column="66" selection-start-line="173" selection-start-column="66" selection-end-line="173" selection-end-column="66" />
+        <state relative-caret-position="214">
+          <caret line="320" column="50" selection-start-line="320" selection-start-column="50" selection-end-line="320" selection-end-column="50" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#3533#3589#0" />
-            <element signature="e#3813#3866#0" />
-            <element signature="e#4074#4127#0" />
-            <element signature="e#4444#4495#0" />
-            <element signature="e#4889#4940#0" />
-            <element signature="e#5364#5424#0" />
-            <element signature="e#6377#6436#0" />
           </folding>
         </state>
       </provider>
