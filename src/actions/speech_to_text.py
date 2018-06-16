@@ -1,16 +1,36 @@
+import io
 import os
 
-import speech_recognition as sr
+from google.cloud import speech
+from google.cloud.speech import enums
+from google.cloud.speech import types
 
 
-def get_user_input():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Say Something")
-        audio = r.listen(source, timeout=1, phrase_time_limit=7)
-        try:
-            text = r.recognize_google(audio)
-            print(text)
-            return text
-        except sr.UnknownValueError:
+def get_user_input(language_code='en-US'):
+    audio_file = '/home/pi/data/audio/recording.wav'
+
+    # record audio
+    os.system('python /home/pi/Robot/src/record.py')
+    if not os.path.exists(audio_file):
+        os.system("mpg123 '/home/pi/Robot/src/audio/sorryICouldNotUnderStandYou.mp3'")
+        return
+
+    client = speech.SpeechClient()
+    with io.open(audio_file, 'rb') as audio_file:
+        content = audio_file.read()
+        audio = types.RecognitionAudio(content=content)
+
+    config = types.RecognitionConfig(
+        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=16000,
+        language_code=language_code
+    )
+
+    # Detects speech in the audio file
+    response = client.recognize(config, audio)
+
+    for result in response.results:
+        if not result.alternatives[0].transcript:
             os.system("mpg123 '/home/pi/Robot/src/audio/sorryICouldNotUnderStandYou.mp3'")
+            return None
+        return result.alternatives[0].transcript

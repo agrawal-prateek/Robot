@@ -6,8 +6,6 @@ import os
 import os.path
 import uuid
 from tkinter import *
-import subprocess
-import time
 
 import google.auth.transport.grpc
 import google.auth.transport.requests
@@ -65,6 +63,7 @@ class SampleAssistant(object):
             return False
         self.conversation_stream.close()
 
+    @staticmethod
     def is_grpc_error_unavailable(e):
         is_grpc_error = isinstance(e, grpc.RpcError)
         if is_grpc_error and (e.code() == grpc.StatusCode.UNAVAILABLE):
@@ -381,8 +380,7 @@ def main():
     # Load OAuth 2.0 credentials.
     try:
         with open(credentials, 'r') as f:
-            credentials = google.oauth2.credentials.Credentials(token=None,
-                                                                **json.load(f))
+            credentials = google.oauth2.credentials.Credentials(token=None, **json.load(f))
             http_request = google.auth.transport.requests.Request()
             credentials.refresh(http_request)
     except Exception as e:
@@ -397,23 +395,20 @@ def main():
     logging.info('Connecting to %s', api_endpoint)
 
     # Configure audio source and sink.
-    audio_device = None
-    audio_source = audio_device = (
-            audio_device or audio_helpers.SoundDeviceStream(
+    audio_source = audio_helpers.SoundDeviceStream(
         sample_rate=audio_sample_rate,
         sample_width=audio_sample_width,
         block_size=audio_block_size,
         flush_size=audio_flush_size
     )
-    )
-    audio_sink = audio_device = (
-            audio_device or audio_helpers.SoundDeviceStream(
+
+    audio_sink = audio_source or audio_helpers.SoundDeviceStream(
         sample_rate=audio_sample_rate,
         sample_width=audio_sample_width,
         block_size=audio_block_size,
         flush_size=audio_flush_size
     )
-    )
+
     # Create conversation stream with the given audio source and sink.
     conversation_stream = audio_helpers.ConversationStream(
         source=audio_source,
@@ -466,7 +461,8 @@ def main():
     device_handler = device_helpers.DeviceRequestHandler(device_id)
 
     with SampleAssistant(
-            lang, device_model_id, device_id, conversation_stream, grpc_channel, grpc_deadline, device_handler
+            lang, device_model_id, device_id, conversation_stream,
+            grpc_channel, grpc_deadline, device_handler
     ) as assistant:
         os.system('mpg123 /home/pi/Robot/src/audio/ping.mp3')
         assistant.assist()

@@ -1,3 +1,4 @@
+import json
 import os
 import re
 
@@ -40,7 +41,7 @@ def get_message_id(service, user_id='me', query=''):
 
 
 def get_gmail_service():
-    store = file.Storage(os.path.join('/home/pi/Robot/src/credentials/authenticated/gmail', 'credentials.json'))
+    store = file.Storage('credentials.json')
     creds = store.get()
     service = build('gmail', 'v1', http=creds.authorize(Http()))
     return service
@@ -49,7 +50,6 @@ def get_gmail_service():
 def get_email(query=''):
     service = get_gmail_service()
     messgae_ids = get_message_id(service=service, query=query)
-    print(messgae_ids)
     emails = []
     for msg_id in messgae_ids:
         try:
@@ -66,7 +66,10 @@ def get_email(query=''):
         except Exception as e:
             print(e)
             continue
-        return emails
+    return emails
 
 
-print(get_email('linkedin'))
+emails_1 = get_email()
+
+with open('a.json', 'w+') as jsonfile:
+    jsonfile.write(json.dumps(emails_1))

@@ -63,6 +63,7 @@ def send_email():
     os.system("mpg123 /home/pi/Robot/src/audio/telltheemailoftheperson.mp3")
     while True:
         initial_email = speech_to_text.get_user_input()
+        print(initial_email)
         if not re.search('(.+)@(.+).(.+)', initial_email):
             os.system('mpg123 /home/pi/Robot/src/audio/pleasetellthevalidemail.mp3')
         else:
