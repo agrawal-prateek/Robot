@@ -63,6 +63,7 @@ def get_email(query=''):
                 "name": n_e[name_start:name_end],
                 "email": n_e[email_start:email_end]
             })
+            print(n_e)
         except Exception as e:
             print(e)
             continue
