@@ -10,7 +10,7 @@ from httplib2 import Http
 from oauth2client import file
 from twilio.rest import Client
 
-from src.actions import getpeoples
+from schedules import sync_peoples
 from src.actions import speech_to_text
 
 
@@ -34,7 +34,7 @@ def sendmail(to_address, subject, email_text):
 
 
 def send_message():
-    persons = getpeoples.get_peoples()
+    persons = sync_peoples.get_peoples()
     os.system('mpg123 /home/pi/Robot/src/audio/pleaseTellMeTheNameOfThePersonToWhomYouWantToSendMessage.mp3')
     personname = speech_to_text.get_user_input().lower()
     personphone = None

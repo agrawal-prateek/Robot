@@ -63,7 +63,6 @@ class SampleAssistant(object):
             return False
         self.conversation_stream.close()
 
-    @staticmethod
     def is_grpc_error_unavailable(e):
         is_grpc_error = isinstance(e, grpc.RpcError)
         if is_grpc_error and (e.code() == grpc.StatusCode.UNAVAILABLE):
@@ -292,11 +291,6 @@ class SampleAssistant(object):
                         elif re.search('(.*)switch(.*)account(.*)', query):
                             break
 
-                        # Get Profile
-                        elif re.search('(.*)whose(.*)profile(.*)', query) \
-                                or re.search('(.*)who(.*)is(.*)this(.*)', query):
-                            break
-
                         # GOOD Morning
                         elif re.search('(.*)good(.*)morning(.*)', query):
                             break
@@ -394,83 +388,84 @@ def main():
         credentials, http_request, api_endpoint)
     logging.info('Connecting to %s', api_endpoint)
 
-    # Configure audio source and sink.
-    audio_source = audio_helpers.SoundDeviceStream(
-        sample_rate=audio_sample_rate,
-        sample_width=audio_sample_width,
-        block_size=audio_block_size,
-        flush_size=audio_flush_size
-    )
+    while True:
+        # Configure audio source and sink.
+        audio_source = audio_helpers.SoundDeviceStream(
+            sample_rate=audio_sample_rate,
+            sample_width=audio_sample_width,
+            block_size=audio_block_size,
+            flush_size=audio_flush_size
+        )
 
-    audio_sink = audio_source or audio_helpers.SoundDeviceStream(
-        sample_rate=audio_sample_rate,
-        sample_width=audio_sample_width,
-        block_size=audio_block_size,
-        flush_size=audio_flush_size
-    )
+        audio_sink = audio_source or audio_helpers.SoundDeviceStream(
+            sample_rate=audio_sample_rate,
+            sample_width=audio_sample_width,
+            block_size=audio_block_size,
+            flush_size=audio_flush_size
+        )
 
-    # Create conversation stream with the given audio source and sink.
-    conversation_stream = audio_helpers.ConversationStream(
-        source=audio_source,
-        sink=audio_sink,
-        iter_size=audio_iter_size,
-        sample_width=audio_sample_width,
-    )
-    if not device_id or not device_model_id:
+        # Create conversation stream with the given audio source and sink.
+        conversation_stream = audio_helpers.ConversationStream(
+            source=audio_source,
+            sink=audio_sink,
+            iter_size=audio_iter_size,
+            sample_width=audio_sample_width,
+        )
+        if not device_id or not device_model_id:
+            try:
+                with open(device_config) as f:
+                    device = json.load(f)
+                    device_id = device['id']
+                    device_model_id = device['model_id']
+                    logging.info("Using device model %s and device id %s",
+                                 device_model_id,
+                                 device_id)
+            except Exception as e:
+                logging.warning('Device config not found: %s' % e)
+                logging.info('Registering device')
+                if not device_model_id:
+                    logging.error('Option --device-model-id required '
+                                  'when registering a device instance.')
+                    sys.exit(-1)
+                if not project_id:
+                    logging.error('Option --project-id required '
+                                  'when registering a device instance.')
+                    sys.exit(-1)
+                device_base_url = (
+                        'https://%s/v1alpha2/projects/%s/devices' % (api_endpoint,
+                                                                     project_id)
+                )
+                device_id = str(uuid.uuid1())
+                payload = {
+                    'id': device_id,
+                    'model_id': device_model_id,
+                    'client_type': 'SDK_SERVICE'
+                }
+                session = google.auth.transport.requests.AuthorizedSession(
+                    credentials
+                )
+                r = session.post(device_base_url, data=json.dumps(payload))
+                if r.status_code != 200:
+                    logging.error('Failed to register device: %s', r.text)
+                    sys.exit(-1)
+                logging.info('Device registered: %s', device_id)
+                pathlib.Path(os.path.dirname(device_config)).mkdir(exist_ok=True)
+                with open(device_config, 'w') as f:
+                    json.dump(payload, f)
+
+        device_handler = device_helpers.DeviceRequestHandler(device_id)
+
         try:
-            with open(device_config) as f:
-                device = json.load(f)
-                device_id = device['id']
-                device_model_id = device['model_id']
-                logging.info("Using device model %s and device id %s",
-                             device_model_id,
-                             device_id)
+            with SampleAssistant(
+                    lang, device_model_id, device_id, conversation_stream,
+                    grpc_channel, grpc_deadline, device_handler
+            ) as assistant:
+                os.system('mpg123 /home/pi/Robot/src/audio/ping.mp3')
+                assistant.assist()
         except Exception as e:
-            logging.warning('Device config not found: %s' % e)
-            logging.info('Registering device')
-            if not device_model_id:
-                logging.error('Option --device-model-id required '
-                              'when registering a device instance.')
-                sys.exit(-1)
-            if not project_id:
-                logging.error('Option --project-id required '
-                              'when registering a device instance.')
-                sys.exit(-1)
-            device_base_url = (
-                    'https://%s/v1alpha2/projects/%s/devices' % (api_endpoint,
-                                                                 project_id)
-            )
-            device_id = str(uuid.uuid1())
-            payload = {
-                'id': device_id,
-                'model_id': device_model_id,
-                'client_type': 'SDK_SERVICE'
-            }
-            session = google.auth.transport.requests.AuthorizedSession(
-                credentials
-            )
-            r = session.post(device_base_url, data=json.dumps(payload))
-            if r.status_code != 200:
-                logging.error('Failed to register device: %s', r.text)
-                sys.exit(-1)
-            logging.info('Device registered: %s', device_id)
-            pathlib.Path(os.path.dirname(device_config)).mkdir(exist_ok=True)
-            with open(device_config, 'w') as f:
-                json.dump(payload, f)
-
-    device_handler = device_helpers.DeviceRequestHandler(device_id)
-
-    with SampleAssistant(
-            lang, device_model_id, device_id, conversation_stream,
-            grpc_channel, grpc_deadline, device_handler
-    ) as assistant:
-        os.system('mpg123 /home/pi/Robot/src/audio/ping.mp3')
-        assistant.assist()
+            print("exception..................")
+            print(e)
 
 
 def start_robot():
-    while True:
-        try:
-            main()
-        except Exception as e:
-            print(e)
+    main()

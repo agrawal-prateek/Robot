@@ -41,7 +41,7 @@ def get_message_id(service, user_id='me', query=''):
 
 
 def get_gmail_service():
-    store = file.Storage('credentials.json')
+    store = file.Storage('/home/pi/Robot/src/credentials/authenticated/gmail/credentials.json')
     creds = store.get()
     service = build('gmail', 'v1', http=creds.authorize(Http()))
     return service
@@ -70,7 +70,10 @@ def get_email(query=''):
     return emails
 
 
-emails_1 = get_email()
+if __name__ == '__main__':
+    emails_list = get_email('digitalocean')
 
-with open('a.json', 'w+') as jsonfile:
-    jsonfile.write(json.dumps(emails_1))
+    if not os.path.exists('/home/pi/data'):
+        os.mkdir('/home/pi/data')
+    with open('/home/pi/data/emails.json', 'w+') as jsonfile:
+        jsonfile.write(json.dumps(emails_list))

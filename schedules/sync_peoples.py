@@ -1,4 +1,8 @@
 from __future__ import print_function
+
+import json
+import os
+
 from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
@@ -27,3 +31,12 @@ def get_peoples():
         except KeyError:
             pass
     return peoples
+
+
+if __name__ == '__main__':
+    peoples_list = get_peoples()
+
+    if not os.path.exists('/home/pi/data'):
+        os.mkdir('/home/pi/data')
+    with open('/home/pi/data/peoples.json', 'w+') as jsonfile:
+        jsonfile.write(json.dumps(peoples_list))
