@@ -34,7 +34,7 @@ If you are confused then ask to robot that **What can you do**. It will give som
 
 
 
-##### If you find any bug or any idea for further improvement in this software, you can contact me on
+##### If you find any bug or any idea for further improvement in this software, Just make a pull request or you can contact me on
 
 [prateekagrawal89760@gmail.com ](mailto://prateekagrawal89760@gmail.com)
 
