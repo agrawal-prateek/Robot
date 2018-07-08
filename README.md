@@ -1,41 +1,40 @@
-# Linux AI
+# Robot
 
 
-LinuxAI is a Assistant for Linux systems. It's similiar to **Google Assistant for Android** and **Cortana for Microsoft Windows**.
+It's a Software for Robot which can interact with human and do many things.
 
-Currently Ubuntu and Debian based operating systems are supported with this software.
+## Requirements
+
+- Radspberry pi with one of these operation sytems
+    - Raspbian
+    - Noobs
+    - Ubunt Mate
+- Display (3.0 - 3.2 Inch)
+- USB Microphone
+- Speakers(Loud but smaller in size)
+- Various Sensors
 
 ## Installation Procedure
 
- First open terminal in the project directory.
+- Install OS on raspberry pi
+- Open terminal in **/home/pi**
+- Make sure to have stable internet connection
+- Now install the software by typing the following command
 
- Next install the software by typing the following command
 
 	bash install.sh
 
 
-**Note: Installation procedure may 15 to 20 minutes. Make sure that you have stable internet connection.**
+**Note: Installation procedure may take 30-35 minutes. Make sure that you have stable internet connection.**
 
-## Launch the software
+## Using Robot
 
- You can launch the software either from Start Menu or from command line by typing the following command
-
-	linuxAI
-
-## Running the commands
-
- After launching the software, you can ask or run any task by giving the voice command. Press **Run** button to give voic command. Here are some examples:
-
-- Ok, open calculator
-- open settings
-- Send an email please!
-- Pleae tell me, how to make tea
-- How is wether today
-- Play the music
-- what is my current location
+Connect all hardware parts of the robot and finally you can use it. 
+If you are confused then ask to robot that **What can you do**. It will give some hints.
 
 
-If you find any bug or any idea for further improvement in this software, you can contact me on
+
+##### If you find any bug or any idea for further improvement in this software, you can contact me on
 
 [prateekagrawal89760@gmail.com ](mailto://prateekagrawal89760@gmail.com)
 
