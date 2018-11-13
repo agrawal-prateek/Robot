@@ -34,11 +34,16 @@ If you are confused then ask to robot that **What can you do**. It will give som
 
 
 
-##### If you find any bug or any idea for further improvement in this software, Just make a pull request or you can contact me on
 
-[prateekagrawal89760@gmail.com ](mailto://prateekagrawal89760@gmail.com)
+For any query, feel free and contact me
 
-[+91-7464847884](tel://+917464847884)
 
-# Thanks for Reading
+**Prateek Agrawal**  
+prateekagrawal89760@gmail.com  
+[Website][4] | [LinkedIn][5] | (+91) 7464847884
 
+#### Thanks for Reading
+
+
+ [4]: http://agrawal-prateek.github.io
+ [5]: https://www.linkedin.com/in/agrawal-prateek
