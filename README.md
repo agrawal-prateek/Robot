@@ -35,15 +35,17 @@ If you are confused then ask to robot that **What can you do**. It will give som
 
 
 
+
+
 For any query, feel free and contact me
 
 
 **Prateek Agrawal**  
 prateekagrawal89760@gmail.com  
-[Website][4] | [LinkedIn][5] | (+91) 7464847884
+[Website][400] | [LinkedIn][500] | (+91) 7464847884
 
 #### Thanks for Reading
 
 
- [4]: http://agrawal-prateek.github.io
- [5]: https://www.linkedin.com/in/agrawal-prateek
+ [400]: http://agrawalprateek.me
+ [500]: https://www.linkedin.com/in/agrawal-prateek
